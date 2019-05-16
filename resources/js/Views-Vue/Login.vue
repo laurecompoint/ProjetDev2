@@ -1,0 +1,88 @@
+<template>
+    <div class="background">
+
+        <h1 class="text-center mt-4">Connexion</h1>
+        <div class="line mt-4"></div>
+
+        <div class="login m-auto">
+            <form @submit.prevent="login" class="mt-5">
+                <label  class="mt-3">Email</label>
+                <small v-if="errors.email">
+                    <p class="m-1 text-danger">
+                        Veuillez saisir votre email
+                    </p>
+                </small>
+                <b-form-input type="email" placeholder="Email" v-model="auth.email"></b-form-input>
+                <label class="mt-3">Mot de passe</label>
+                <small v-if="errors.password">
+                    <p class="m-1 text-danger">
+                        Veuillez saisir votre mot de passe
+                    </p>
+                </small>
+                <b-form-input type="password"  placeholder="Mot de passe" v-model="auth.password"></b-form-input>
+                <div class="button-valider">
+                    <b-button type="submit" class="mt-4 button-login-register" >Valider</b-button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</template>
+<script>
+    export default {
+        name: "Login",
+        data() {
+            return {
+                api: process.env.MIX_API_LOCAL,
+                auth:{
+                    email: '',
+                    password: '',
+                },
+                errors: {}
+            }
+        },
+        methods : {
+            login () {
+                axios.post('/login', this.auth)
+                    .then(res => {
+                        window.location = '/'
+                    })
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+                        console.log(this.errors)
+                    })
+            },
+            canSubmit () {
+                return this.auth.email === '' || this.auth.password === ''
+            }
+        }
+
+    }
+</script>
+<style scoped lang="scss">
+    $responsive-tablet: 768px;
+    $responsive-mobile: 425px;
+    .login{
+        width: 600px;
+        min-height: 350px;
+    }
+    .form-control{
+        width: 100%;
+        border-radius: 0px;
+        border: Solid #6C8EAD 3px;
+    }
+    .button-login-register{
+        float: right;
+        background-color: #3D628D;
+        border-radius: 10px;
+        border: none;
+    }
+    @media (max-width: $responsive-mobile) {
+
+        .login{
+            width: 300px;
+        }
+    }
+
+
+</style>

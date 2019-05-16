@@ -1,0 +1,22 @@
+$responsive-tablet: 768px;
+$responsive-mobile: 425px;
+.login{
+  width: 600px;
+  min-height: 720px;
+}
+.form-control{
+  width: 100%;
+  border-radius: 0px;
+  border: Solid #6C8EAD 3px;
+}
+.button-login-register{
+  float: right;
+  background-color: #3D628D;
+  border-radius: 10px;
+  border: none;
+}
+@media (max-width: $responsive-mobile) {
+  .login{
+    width: 300px;
+  }
+}
