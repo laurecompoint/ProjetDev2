@@ -27,7 +27,7 @@
     </li>
 @endguest
 
-<div id="app">
+<div id="app" class="background">
     <app></app>
 </div>
 

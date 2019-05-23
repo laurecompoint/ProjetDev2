@@ -1,6 +1,6 @@
 <template>
     <div class="add">
-        <div class="text-promo">
+        <div class="goodies-losange">
             <div class="text-promotion text-center">
                 <h4 class="color">GOODIES</h4>
                 <p class="color">Retrouver tous nos Goodies</p>
@@ -52,7 +52,7 @@
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
     .background-slide{
-        background-image: url("../../assets/img/fondproduits.png");
+        background-image: url("../../../public/img/fondproduits.png");
         background-size: 1500px;
 
     }
@@ -60,17 +60,7 @@
         height: 390px;
         width: 800%;
     }
-    .text-promo{
-        height: 230px;
-        width: 230px;
-        background: white;
-        box-shadow: 8px 8px 12px #6C8EAD;
-        -webkit-transform: rotate(45deg);
-        border-radius: 80px;
-        position: absolute;
-        top: 150px;
-        left:50px;
-    }
+
     .product{
         margin-top: 200px;
         float: right;
@@ -104,7 +94,7 @@
         align-self: center;
     }
     .background-image{
-        background-image: url("../../assets/img/fondimage.png");
+        background-image: url("../../../public/img/fondimage.png");
         background-size: 320px;
         border-radius: 10px;
     }

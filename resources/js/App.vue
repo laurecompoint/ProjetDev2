@@ -21,14 +21,18 @@
 
 </script>
 <style scoped lang="scss">
+    #app{
+        background-image: url("../../public/img/fondbackground.png");
+        background-size: 1500px;
+    }
 
     @font-face {
         font-family: "Monad";
-        src: url('../assets/fonts/monad/Monad.otf');
+        src: url('../../public/fonts/monad/Monad.otf');
     }
     @font-face {
         font-family: "Gravity";
-        src: url('../assets/fonts/gravity/Gravity-Regular.otf');
+        src: url('../../public/fonts/gravity/Gravity-Regular.otf');
     }
 
 </style>

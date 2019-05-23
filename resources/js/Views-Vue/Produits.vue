@@ -1,5 +1,5 @@
 <template>
-    <div class="add" v-bind:key="produit.id">
+    <div class="" v-bind:key="produit.id">
         <div class="mt-5">
             <b-row  class="mt-3 test" align-h="around">
                 <b-col cols="12" md="7" class="livraison title">
@@ -22,13 +22,13 @@
                     <strong > - Livraison Rapide </strong>
                     <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                     <strong > - Livraison Gratuite</strong>
-                    <p class=" mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    <p class=" mt-2 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                 </b-col>
                 <b-col cols="12" md="4" class="" align-v="center">
 
-                    <div class="text-promo m-auto">
+                    <div class="produits-losange m-auto">
                     </div>
-                    <div class="text-promotion text-center">
+                    <div class="products-title text-center">
                         <h4>{{ produit.name }}</h4>
                         <h4>{{ produit.price }}€</h4>
                     </div>
@@ -80,21 +80,10 @@
 <style scoped lang="scss">
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
-    .text-promo{
-        height: 230px;
-        width: 230px;
+    .app{
         background-color: white;
-        -webkit-transform: rotate(45deg);
-        border-radius: 80px;
-        display: flex;
-        justifie-content: center;
-        //margin-left: 200px;
-        box-shadow: 8px 8px 12px #6C8EAD;
-        //background-image: url("../../assets/img/calendarplus.png");
-        //background-size: 500px;
-
     }
-    .text-promotion{
+    .products-title{
         width: 50%;
         position: absolute;
         top: 50px;

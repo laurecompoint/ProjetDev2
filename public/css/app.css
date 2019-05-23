@@ -1,0 +1,275 @@
+.line-auth {
+  background-color: #3D628D;
+  height: 15px;
+  margin-left: -10px;
+  width: 102%;
+}
+
+.title-auth {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.background {
+  background-image: url(/images/fondbackground.png?cd8dcf22dec3f0c15ebdaf3c501b1f76);
+  background-size: 1500px;
+}
+
+.login {
+  width: 600px;
+  min-height: 720px;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 0px;
+  border: Solid #6C8EAD 3px;
+}
+
+.button-login-register {
+  float: right;
+  background-color: #3D628D;
+  border-radius: 10px;
+  border: none;
+}
+
+@media (max-width: 425px) {
+  .login {
+    width: 300px;
+  }
+}
+
+.background-slide {
+  background-image: url(/images/fondcarousel.png?f6c9f2a0f095609266b4acd3f8826d5d);
+  background-size: 1500px;
+  height: 550px;
+}
+
+.background-image {
+  background-image: url(/images/fondimage.png?d21cd384a4bb93a973b9ab52fb836edb);
+  background-size: 410px;
+}
+
+.arrow-down {
+  position: absolute;
+  top: 1700px;
+  left: 88px;
+  width: 45%;
+}
+
+@font-face {
+  font-family: "Monad";
+  src: url(/fonts/Monad.otf?e6acb61530e56496b5462599de49d7d8);
+}
+
+h1,
+h5,
+h4,
+h2 {
+  font-family: "Monad";
+}
+
+h1 {
+  color: #3D628D;
+}
+
+.line {
+  background-color: #3D628D;
+  height: 15px;
+}
+
+.goodies-losange,
+.produits-losange,
+.text-entreprise,
+.text-promo,
+.text-compagny {
+  -webkit-transform: rotate(45deg);
+  border-radius: 80px;
+  height: 230px;
+  width: 230px;
+}
+
+.text-promo,
+.text-compagny {
+  background-color: white;
+}
+
+.text-entreprise {
+  background-color: #6C8EAD;
+  margin-left: 185px;
+}
+
+.produits-losange {
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+  display: flex;
+  justifie-content: center;
+  box-shadow: 8px 8px 12px #6C8EAD;
+}
+
+.goodies-losange {
+  background: white;
+  box-shadow: 8px 8px 12px #6C8EAD;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+}
+
+.text-promotion {
+  -webkit-transform: rotate(-45deg);
+  margin-right: 40px;
+  padding-top: 40px;
+}
+
+.text-compagny {
+  background-color: #6C8EAD;
+  margin-left: 185px;
+}
+
+.slide {
+  min-height: 450px;
+}
+
+.image {
+  width: 190%;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+H5 {
+  color: black;
+}
+
+:hover link {
+  text-decoration: none;
+}
+
+.color {
+  color: #3C618C;
+}
+
+.responsive-margin {
+  margin-left: -67px;
+}
+
+.imagetwo {
+  width: 400px;
+}
+
+.imagethree {
+  margin: auto;
+}
+
+.contain-white {
+  width: 1250px;
+  margin: auto;
+}
+
+.title {
+  padding-left: 90px;
+}
+
+.block {
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block-responsive {
+    margin-left: 200px;
+    margin-right: 220px;
+  }
+
+  .contain-white {
+    width: 0px;
+  }
+
+  .block {
+    margin-top: 10px;
+  }
+
+  .responsive-entreprise {
+    display: none;
+  }
+
+  .responsive-margin {
+    margin-left: 40px;
+    width: 500px;
+  }
+
+  .arrow-down {
+    position: absolute;
+    top: 2595px;
+    left: 88px;
+    width: 45%;
+  }
+
+  .imagetwo {
+    width: 330px;
+  }
+}
+
+@media (max-width: 425px) {
+  .button,
+  .margin {
+    margin-left: -80px;
+  }
+
+  .responsive-margin {
+    margin-left: 0px;
+    width: 500px;
+  }
+
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .block {
+    margin-top: 10px;
+    margin-left: -20px;
+  }
+
+  .title {
+    padding-left: 15px;
+  }
+
+  .contain-white {
+    width: 0px;
+  }
+
+  .block-responsive {
+    margin-left: 200px;
+    margin-right: 220px;
+  }
+
+  .arrow-down {
+    position: absolute;
+    top: 2585px;
+    left: 15px;
+    width: 93%;
+  }
+
+  .image {
+    position: absolute;
+    top: -120px;
+    LEFT: -315px;
+    WIDTH: 251px;
+  }
+
+  .imagetwo {
+    position: absolute;
+    top: -109px;
+    LEFT: -315px;
+    WIDTH: 251px;
+  }
+}
+

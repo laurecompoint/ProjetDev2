@@ -43,7 +43,7 @@
         },
         methods : {
             login () {
-                axios.post('/login', this.auth)
+                axios.post(`${this.api}login`, this.auth)
                     .then(res => {
                         window.location = '/'
                     })

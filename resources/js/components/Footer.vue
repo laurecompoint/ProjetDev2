@@ -46,24 +46,13 @@ export default {
 <style  lang="scss">
   $responsive-tablet: 768px;
   $responsive-mobile: 425px;
-  $blue : #6C8EAD;
-  @font-face {
-    font-family: "Monad";
-    src: url('../../assets/fonts/monad/Monad.otf');
-  }
   .footer{
     background-color: #6C8EAD;
     color: white;
   }
-  a, i, link{
+    a, i, link{
     color: white;
-  }
-  h1,h5, h4, h2{
-    font-family: 'Monad';
-  }
-  h1{
-    color: #3D628D;
-  }
+    }
   .button-login-register{
     background-color: #3C618C;
     border: none;

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
-use http\Env\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -20,28 +20,32 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    protected function validator(array $data)
+    protected function validator(Request $request)
     {
-        return Validator::make($data, [
-            'lastname' => ['required', 'string', 'max:255'],
-            'firstname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'adresse' => ['required', 'string', 'max:255'],
-            'tel' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'string', 'confirmed'],
-        ]);
+
     }
 
 
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'lastname' => $data['lastname'],
-            'firstname' => $data['fristname'],
-            'email' => $data['email'],
-            'adresse' => $data['adresse'],
-            'tel' => $data['tel'],
-            'password' => Hash::make($data['password']),
+
+        $validator = $request->validate([
+        'lastname' => ['required', 'string', 'max:255'],
+        'firstname' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'adresse' => ['required', 'string', 'max:255'],
+        'tel' => ['required', 'string', 'max:255'],
+        'password' => ['required', 'string', 'min:8'],
         ]);
+        return User::create([
+            'lastname' => $request['lastname'],
+            'firstname' => $request['firstname'],
+            'email' => $request['email'],
+            'adresse' => $request['adresse'],
+            'tel' => $request['tel'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+
     }
 }

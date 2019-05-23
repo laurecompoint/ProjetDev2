@@ -1,9 +1,9 @@
 <template>
     <div class="error">
-    <b-row class="pt-5" align-h="center" >
-        <img src="../../assets/img/404.png" class="picture"/>
+        <b-row class="pt-5" align-h="center" >
+            <img src="../../../public/img/404.png" class="picture"/>
 
-    </b-row>
+        </b-row>
     </div>
 </template>
 
@@ -16,7 +16,7 @@
 <style scoped>
     .error{
         height: 680px;
-        background-image: url("../../assets/img/fondcarousel.png");
+        background-image: url("../../../public/img/fondcarousel.png");
         background-size: 1500px;
     }
     .picture{

@@ -1,33 +1,33 @@
-
-<div class="background">
-    <h1 class="text-center mt-4">Inscription</h1>
-    <div class="line mt-4"></div>
+<link rel="stylesheet" href="css/app.css">
+ <div>
+    <h1 class="title-auth">Inscription</h1>
+    <div class="line-auth mt-4"></div>
     <div class="login m-auto">
         <form methode="post" @submit.prevent="register">
             <b-row align-h="center"  class="mt-5">
                 <b-col cols="6">
                     <label>Nom</label>
-                    <b-form-input type="text" placeholder="Nom"></b-form-input>
+                    <input type="text" placeholder="Nom"><input/>
                 </b-col>
                 <b-col cols="6">
                     <label>Prénom</label>
 
-                    <b-form-input type="text" placeholder="Prénom"></b-form-input>
+                    <input type="text" placeholder="Prénom"><input/>
 
                 </b-col>
             </b-row>
 
             <label  class="mt-3">Email</label>
 
-            <b-form-input type="email" placeholder="Email"></b-form-input>
+            <input type="email" placeholder="Email"><input/>
 
 
             <label class="mt-3">Adresse</label>
 
-            <b-form-input type="text" placeholder="Adresse"></b-form-input>
+            <input type="text" placeholder="Adresse"><input/>
             <label class="mt-3">Numéro de téléphone</label>
 
-            <b-form-input type="text" placeholder="Numéro de téléphone"></b-form-input>
+            <input type="text" placeholder="Numéro de téléphone"><input/>
 
 
             <label class="mt-3">Mot de passe</label>

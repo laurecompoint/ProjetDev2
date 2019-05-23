@@ -28,6 +28,9 @@ import { faPaperPlane, faImages, faCartArrowDown, faTruck, faLongArrowAltDown, f
 import { faFacebook, faTwitter, faInstagram, faFacebookMessenger } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import ImageUploader from 'vue-image-upload-resize'
+Vue.use(ImageUploader);
+
 //view import
 window.Vue = require('vue')
 
@@ -46,6 +49,8 @@ import Register from './Views-Vue/Register.vue'
 import Profile from './Views-Vue/Profil.vue'
 import Panier from './Views-Vue/Panier.vue'
 import CreationMugs from './Views-Vue/CreationMugs.vue'
+import CreationCadrePhoto from './Views-Vue/CreationCadrePhoto.vue'
+import CreationCalendrier from './Views-Vue/CreationCalendrier.vue'
 import Error from './Views-Vue/Error.vue'
 
 const router = new VueRouter({
@@ -121,6 +126,12 @@ const router = new VueRouter({
 
         },
         {
+            path: '/register',
+            name: 'register',
+            component: Register,
+
+        },
+        {
             path: '/profile-modif',
             name: 'profile-modif',
             component: Profile
@@ -134,6 +145,16 @@ const router = new VueRouter({
             path: '/creation-mugs',
             name: 'creatiomugs',
             component: CreationMugs
+        },
+        {
+            path: '/creation-cadrephoto',
+            name: 'creatiocadrephoto',
+            component: CreationCadrePhoto
+        },
+        {
+            path: '/creation-calendrier',
+            name: 'creation calendrier',
+            component: CreationCalendrier
         },
         {
             path:"*",

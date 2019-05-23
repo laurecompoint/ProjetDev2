@@ -3,13 +3,13 @@
     <h1 class="text-center mt-4">Inscription</h1>
     <div class="line mt-4"></div>
     <div class="login m-auto">
-        <form methode="post" @submit.prevent="register">
+        <form  @submit.prevent="register">
         <b-row align-h="center"  class="mt-5">
             <b-col cols="6">
                 <label>Nom</label>
                 <small v-if="errors.lastname">
-                    <p class="m-1 text-danger">
-                        Veuillez saisir votre Nom
+                    <p class="m-1 text-danger" v-for="Error in errors.lastname">
+                        {{ Error }}
                     </p>
                 </small>
                 <b-form-input type="text" placeholder="Nom"  v-model="auth.lastname"></b-form-input>
@@ -18,8 +18,8 @@
             <b-col cols="6">
                 <label>Prénom</label>
                 <small v-if="errors.firstname">
-                    <p class="m-1 text-danger">
-                        Veuillez saisir votre Prénom
+                    <p class="m-1 text-danger" v-for="Error in errors.firstname">
+                        {{ Error }}
                     </p>
                 </small>
                 <b-form-input type="text" placeholder="Prénom" v-model="auth.firstname"></b-form-input>
@@ -29,33 +29,30 @@
 
             <label  class="mt-3">Email</label>
             <small v-if="errors.email">
-                <p class="m-1 text-danger">
-                    Veuillez saisir votre Mail
+                <p class="text-danger" v-for="Error in errors.email" >
+                    {{ Error }}
                 </p>
             </small>
             <b-form-input type="email" placeholder="Email" v-model="auth.email"></b-form-input>
 
-
             <label class="mt-3">Adresse</label>
             <small v-if="errors.adresse">
-                <p class="m-1 text-danger">
-                    Veuillez saisir votre Adresse
+                <p class="text-danger" v-for="Error in errors.adresse">
+                    {{ Error }}
                 </p>
             </small>
             <b-form-input type="text" placeholder="Adresse" v-model="auth.adresse"></b-form-input>
             <label class="mt-3">Numéro de téléphone</label>
             <small v-if="errors.tel">
-                <p class="m-1 text-danger">
-                    Veuillez saisir votre Numéro de Téléphone
+                <p class="text-danger" v-for="Error in errors.tel">
+                    {{ Error }}
                 </p>
             </small>
-            <b-form-input type="text" placeholder="Numéro de téléphone" v-model="auth.tel"></b-form-input>
-
-
+            <b-form-input type="number" placeholder="Numéro de téléphone" maxlength="10" v-model="auth.tel"></b-form-input>
             <label class="mt-3">Mot de passe</label>
             <small v-if="errors.password">
-                <p class="m-1 text-danger">
-                    Veuillez saisir votre Mot de passe
+                <p class="text-danger" v-for="Error in errors.password">
+                    {{ Error }}
                 </p>
             </small>
             <b-form-input type="password"  placeholder="Mot de passe" v-model="auth.password"></b-form-input>
@@ -65,7 +62,7 @@
             </div>
             <b-form-input type="password" placeholder="Confirmation du mot de passe" v-model="auth.confirmPassword"></b-form-input>
             <div class="button-valider">
-                <b-button type="submit" class="mt-4 button-login-register">Valider</b-button>
+                <b-button type="submit"  class="mt-4 button-login-register">Valider</b-button>
             </div>
         </form>
     </div>
@@ -86,22 +83,23 @@
                     password: '',
                     confirmPassword: '',
                 },
-                errors: {}
+                errors: {
+
+                }
             }
         },
         methods : {
             register() {
-                axios.post(`/register`, this.auth)
+                axios.post(`${this.api}register`,  this.auth)
                     .then(res => {
                         window.location = '/'
                     })
                     .catch(err => {
                         this.errors = err.response.data.errors
+
                     })
             },
-            error() {
-                return this.errors.tel === '' || this.errors.adresse === '' || this.errors.firstname === '' || this.errors.lastname === '' || this.auth.email === '' || this.auth.password === '' || this.auth.confirmPassword === '' || this.confirm()
-            },
+
             confirmpassword () {
                 return this.auth.password  !== this.auth.confirmPassword
             }

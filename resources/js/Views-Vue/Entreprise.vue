@@ -1,6 +1,6 @@
 <template>
     <div class="add">
-        <div class="compagny text-center">
+        <div class="compagny-picture text-center">
 
              <h2>Notre entreprise - CREATIVE PICTURE</h2>
              <h2>Cree vos propre souvenire</h2>
@@ -31,7 +31,7 @@
                 </b-col>
                 <b-col cols="12" md="4" class="text-right responsive-entreprise">
                     <div class="text-entreprise mt-1">
-                        <img src="../../assets/img/logoentreprise.png" class="w-75 mr-4 mt-4"/>
+                        <img src="img/logoentreprise.png" class="w-75 mr-4 mt-4"/>
                     </div>
                 </b-col>
             </b-row>
@@ -61,8 +61,8 @@
                 </b-col>
                 <b-col cols="12" md="3">
                     <div class="mt-5">
-                        <img src="../../assets/img/produitensemble.png" class="produits mt-3"/>
-                        <b-button class="mt-3 button2" to="/album">Creation Album</b-button>
+                        <img src="img/produitensemble.png" class="produits mt-3"/>
+                        <b-button class="mt-3 button2" to="/creation-album">Creation Album</b-button>
                     </div>
                 </b-col>
             </b-row>
@@ -83,8 +83,8 @@
 <style scoped lang="scss">
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
-    .compagny{
-        background-image: url("../../assets/img/entreprise.png");
+    .compagny-picture{
+        background-image: url("../../../public/img/entreprise.png");
         background-size: 1450px;
         height: 560px;
         padding-top: 190px;
@@ -92,31 +92,14 @@
     h2{
         color: white;
     }
-    .text-entreprise{
-        background-color: #6C8EAD;
-        margin-left: 185px;
-        height: 230px;
-        width: 230px;
-        -webkit-transform: rotate(45deg);
-        border-radius: 80px;
-    }
-    .responsive-margin{
-        margin-left: -67px;
-    }
-    .title{
-        padding-left: 90px;
-    }
     .icon-contact{
         line-height: 0.1rem;
-    }
-    .icon-map{
-        margin-left: 4px;
     }
     .add{
         background-color: white;
     }
-    .produits{
-        width: 120%;
+    .responsive-margin{
+        margin-left: -67px;
     }
     .button2{
         background-color: #54A3AD;
@@ -127,7 +110,19 @@
     .btn{
         display: inline;
     }
+    .produits{
+        width: 120%;
+    }
+    .icon-map{
+        margin-left: 4px;
+    }
+    .title{
+        padding-left: 90px;
+    }
     @media (max-width: $responsive-tablet) {
+        .button2{
+            margin-left: 0px;
+        }
         .responsive-entreprise{
             display: none;
         }
@@ -147,22 +142,27 @@
         #title{
             margin-top: 40px;
         }
+
     }
     @media (max-width: $responsive-mobile) {
         .responsive-margin{
             margin-left: 0px;
 
         }
+        .produits{
+             margin-left: 20px;
+
+         }
         .button2{
             margin-left: 120px;
 
         }
-        .produits{
-            margin-left: 20px;
-
-        }
         #title{
             margin-top: 40px;
+        }
+        .button2{
+            margin-left: 120px;
+
         }
     }
 </style>

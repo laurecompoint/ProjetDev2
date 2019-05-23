@@ -4,19 +4,13 @@
         <div class="line mt-4"></div>
 
         <div class="text-center">
-            <label for="file" class="label-file text-center"><img src="../../assets/img/ordi.png"  class="w-25 mt-5"/></label>
+            <label for="file" class="label-file text-center"><img src="img/ordi.png"  class="w-25 mt-5"/></label>
            <div class="picture-file mt-5">
-
                <input id="file" v-on="image" class="input-file" type="file">
            </div>
             <p CLASS="mt-5 pb-3"> Choisir vos photos puis crée votre albums...
            <br> Utilisation facile et rapide</p>
-
-
         </div>
-
-
-
 
     </div>
 
