@@ -9,37 +9,25 @@
                     <div class="customize-choice">
                         <h6 class="">Choisir une photo</h6>
                         <div class="w-75 m-auto">
-                            <label for="fileInput" slot="upload-label">
-                                <figure>
+                            <label>
+                                <figure class="inputfile">
+                                    <input type="file" @change="previewImage" accept="image/*">
                                     <font-awesome-icon icon="images" style="font-size:40px; color: #3C618C; cursor: pointer" />
                                 </figure>
                             </label>
-                            <div class="w-75 m-auto">
+                            <div class="w-75 m-auto inputtext">
                                 <b-form-input class="mt-2" maxlength="30" v-model="text" placeholder="Entrer votre text"></b-form-input>
                             </div>
                         </div>
                     </div>
                 </b-col>
                 <b-col cols="12" md="9" class="customizes">
-                        <div class="customizes-cadre">
-                        <div class="img">
-                            <image-uploader
-                                    :preview="true"
-                                    :className="['fileinput', { 'fileinput--loaded': hasImage }]"
-                                    capture="environment"
-                                    :debug="1"
-                                    doNotResize="gif"
-                                    :autoRotate="true"
-                                    outputFormat="verbose"
-                                    @input="setImage"
-                                    v-model="image"
-                                    CLASS="IMG"
 
-                            >
-                            </image-uploader>
-                        </div>
-                        <p class="text-center mt-4 bg-white textgoodies">{{ text }}</p>
-                        </div>
+                            <div class="image-preview" v-if="imageData.length > 0">
+                                <img class="preview" :src="imageData">
+                            </div>
+                        <p class="text-center mt-4 textgoodies">{{ text }}</p>
+
                 </b-col>
             </b-row>
             <b-container>
@@ -57,17 +45,28 @@
         name: "HelloWorld",
         data() {
             return {
-                hasImage: false,
-                image: null,
+                imageData: "",
                 text: 'Votre text sera ici'
             };
         },
         methods: {
-            setImage: function(output) {
-                this.hasImage = true;
-                this.image = output;
-                console.log(this.image);
-            }
+
+                previewImage: function(event) {
+
+                    var input = event.target;
+
+                    if (input.files && input.files[0]) {
+
+                        var reader = new FileReader();
+
+                        reader.onload = (e) => {
+
+                            this.imageData = e.target.result;
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
         }
     };
 </script>
@@ -75,46 +74,23 @@
 <style scoped lang="scss">
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
-
+    img.preview {
+        width: 400px;
+        background-color: white;
+        border: 1px solid #DDD;
+    }
     .textgoodies{
+        background-color: #efefef;
         position: absolute;
         top: 340px;
-        height: 30px;
-        width: 43%;
+        height: 32px;
+        width: 42%;
     }
-    .customizes-cadre{
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-        align-items: center;
-        height: 265px;
-        WIDTH: 40%;
-
-    }
-    .customizes{
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: column;
-        height: 265px;
-        WIDTH: 40%;
-    }
-    #fileInput {
+    .inputfile input{
         display: none;
-    }
-
-    image-uploader{
-        width: 50%;
-    }
-    .creation{
-        width: 90%;
-        margin: auto;
-
     }
     h5{
         color: #3C618C;
-    }
-    .background{
-        min-height: 680px;
     }
     .customizes{
         display: flex;
@@ -128,7 +104,6 @@
         height: 500px;
     }
     input{
-
         background-color: transparent;
         border: solid #3C618C;
         margin: auto;
@@ -158,31 +133,23 @@
         padding-bottom: 30px;
 
     }
-    .picture-mugs{
-        width: 100%;
-    }
     @media (max-width: $responsive-mobile) {
 
-        .picture-mugs{
-            width:85%
-        }
-        .border-customizes{
-            justify-content: right;
-        }
-        p{
-            margin-left: -30px;
-        }
     }
     @media (max-width: $responsive-tablet) {
         .customize-choice{
             top: 90px;
             left: 50px;
         }
-        input{
-            width: 120px;
+        .inputtext input{
+            width: 100px;
         }
         .customizes{
             background-size: 400px;
+        }
+        img.preview {
+            width: 315px;
+
         }
 
     }

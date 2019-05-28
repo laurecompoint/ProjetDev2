@@ -9,12 +9,11 @@
                 <div class="customize-choice">
                     <h6 class="">Choisir une photo</h6>
                     <div class="w-75 m-auto">
-                                <label for="fileInput" slot="upload-label">
-                                    <figure>
+                                <label class="inputfile">
+                                        <input type="file" @change="previewImage" accept="image/*">
                                         <font-awesome-icon icon="images" style="font-size:40px; color: #3C618C; cursor: pointer" />
-                                    </figure>
                                 </label>
-                                <div class="w-75 m-auto">
+                                <div class="w-75 m-auto inputtext">
                                     <b-form-input class="mt-2" maxlength="30" v-model="text" placeholder="Entrer votre text"></b-form-input>
                                 </div>
 
@@ -24,19 +23,9 @@
             </b-col>
             <b-col cols="12" md="9" class="customizes">
                 <div class="customizesblock">
-                    <image-uploader
-                            :preview="true"
-                            :className="['fileinput', { 'fileinput--loaded': hasImage }]"
-                            capture="environment"
-                            :debug="1"
-                            doNotResize="gif"
-                            :autoRotate="true"
-                            outputFormat="verbose"
-                            @input="setImage"
-                            v-model="image"
-
-                    >
-                    </image-uploader>
+                    <div class="image-preview" v-if="imageData.length > 0">
+                        <img class="preview" :src="imageData">
+                    </div>
                     <p class="text-center mt-4">{{ text }}</p>
                 </div>
             </b-col>
@@ -56,34 +45,40 @@
         name: "Creation-Mugs",
         data() {
             return {
-                hasImage: false,
-                image: null,
+                imageData: "",
                 text: 'Votre text sera ici'
             };
         },
         methods: {
-            setImage: function(output) {
-                this.hasImage = true;
-                this.image = output;
-                console.log(this.image);
+            previewImage: function(event) {
+
+                var input = event.target;
+
+                if (input.files && input.files[0]) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = (e) => {
+
+                        this.imageData = e.target.result;
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
             }
         }
     };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style  lang="scss">
+<style scoped lang="scss">
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
-    #fileInput {
+    .inputfile input{
         display: none;
     }
-    .customizesblock img{
-        width: 33%;
-        margin-left: 261px;
-    }
-    image-uploader{
-        width: 50%;
+    img.preview {
+        width: 250px;
     }
     .creation{
         width: 90%;
@@ -92,9 +87,6 @@
     }
     h5{
         color: #3C618C;
-    }
-    .background{
-        min-height: 680px;
     }
     .customizes{
         display: flex;
@@ -111,12 +103,11 @@
     .customizesblock{
         margin-left: 150px;
     }
-
-    input{
-
+    .inputtext input{
         background-color: transparent;
         border: solid #3C618C;
         margin: auto;
+        border-radius: 0px;
     }
     .text-promo{
         height: 220px;
@@ -142,9 +133,6 @@
         justify-content: flex-end;
         padding-bottom: 30px;
 
-    }
-    .picture-mugs{
-        width: 100%;
     }
     @media (max-width: $responsive-mobile) {
 

@@ -20,30 +20,30 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    protected function validator(Request $request)
+    protected function validator(array $data)
     {
 
+        return Validator::make($data, [
+            'lastname' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'adresse' => ['required', 'string', 'max:255'],
+            'tel' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
     }
 
 
-    protected function create(Request $request)
+    protected function create(array $data)
     {
 
-        $validator = $request->validate([
-        'lastname' => ['required', 'string', 'max:255'],
-        'firstname' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        'adresse' => ['required', 'string', 'max:255'],
-        'tel' => ['required', 'string', 'max:255'],
-        'password' => ['required', 'string', 'min:8'],
-        ]);
         return User::create([
-            'lastname' => $request['lastname'],
-            'firstname' => $request['firstname'],
-            'email' => $request['email'],
-            'adresse' => $request['adresse'],
-            'tel' => $request['tel'],
-            'password' => Hash::make($request['password']),
+            'lastname' => $data['lastname'],
+            'firstname' => $data['firstname'],
+            'email' => $data['email'],
+            'adresse' => $data['adresse'],
+            'tel' => $data['tel'],
+            'password' => Hash::make($data['password']),
         ]);
 
 

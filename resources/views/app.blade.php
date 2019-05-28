@@ -9,28 +9,31 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
+
+
 @guest
 
 @else
-    <li class="nav-item dropdown">
 
-            <a  href="{{ route('logout') }}" style="color: black;"
-               onclick="event.preventDefault();
+    <li class="">
+
+        <a  href="{{ route('logout') }}" style="color: black;"
+            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-            </a>
+            {{ __('Logout') }}
+        </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
 
     </li>
+
 @endguest
-
 <div id="app" class="background">
-    <app></app>
-</div>
 
+    <app ></app>
+</div>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-       return Auth::user();
+        return  Auth::id(1);
     }
     public function update(Request $request)
     {

@@ -1,7 +1,7 @@
 <template>
   <div class="add">
     <img class="arrow-down" src="img/fleche.png"/>
-  <carousel :per-page="1" :navigate-to="test" :mouse-drag="false" class="background-slide">
+  <carousel :per-page="1"  class="background-slide">
     <slide class="slide d-flex align-content-center align-items-center ml-5">
       <b-container class="">
         <b-row align-v="center" class="margin-slide">
@@ -53,22 +53,22 @@
           <img src="img/album.png" class="imagethree w-75"/>
         </div>
         <div class="flex-column background-image block text-center  pt-5 ">
-          <b-link to="/goodies/mugs"><h5>Mugs</h5></b-link>
+          <b-link to="/mugs"><h5>Mugs</h5></b-link>
           <img src="img/mugs.png" class="imagethree w-75"/>
         </div>
         <div class="flex-column background-image block text-center  pt-5 ">
-          <b-link to="/goodies/calendrier" ><h5>Calendrier</h5></b-link>
+          <b-link to="/calendrier" ><h5>Calendrier</h5></b-link>
           <img src="img/calendrier.png" class="imagethree w-50 mt-3"/>
 
         </div>
       </div>
       <div class="mt-4 products">
         <div class="flex-column  block text-center pt-5 background-image block-responsive"  style="margin-left: 210px">
-          <b-link to="/goodies/cadrephoto"><h5>Cadre Photo</h5></b-link>
+          <b-link to="/cadrephoto"><h5>Cadre Photo</h5></b-link>
           <img src="img/cardrephoto.png" class="imagethree w-75 mt-3"/>
         </div>
         <div class="flex-column block text-center pt-5 background-image block-responsive" style="margin-right: 210px">
-          <b-link to="/goodies/memorie"><h5>Memorie</h5></b-link>
+          <b-link to="/memorie"><h5>Memorie</h5></b-link>
           <img src="img/memory1.png" class="imagethree" STYLE="width: 70%"/>
         </div>
       </div>

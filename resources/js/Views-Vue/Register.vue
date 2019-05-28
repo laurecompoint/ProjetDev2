@@ -6,9 +6,9 @@
         <form  @submit.prevent="register">
         <b-row align-h="center"  class="mt-5">
             <b-col cols="6">
-                <label>Nom</label>
+                <label  class="mt-3">Nom</label>
                 <small v-if="errors.lastname">
-                    <p class="m-1 text-danger" v-for="Error in errors.lastname">
+                    <p class="text-danger" v-for="Error in errors.lastname">
                         {{ Error }}
                     </p>
                 </small>
@@ -16,9 +16,9 @@
 
             </b-col>
             <b-col cols="6">
-                <label>Prénom</label>
+                <label class="mt-3">Prénom</label>
                 <small v-if="errors.firstname">
-                    <p class="m-1 text-danger" v-for="Error in errors.firstname">
+                    <p class="text-danger" v-for="Error in errors.firstname">
                         {{ Error }}
                     </p>
                 </small>
@@ -29,7 +29,7 @@
 
             <label  class="mt-3">Email</label>
             <small v-if="errors.email">
-                <p class="text-danger" v-for="Error in errors.email" >
+                <p class="text-danger" v-for="Error in errors.email">
                     {{ Error }}
                 </p>
             </small>
@@ -73,7 +73,6 @@
         name: "Register",
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
                 auth:{
                     lastname: '',
                     firstname: '',
@@ -90,9 +89,10 @@
         },
         methods : {
             register() {
-                axios.post(`${this.api}register`,  this.auth)
+                axios.post(`/register`,  this.auth)
                     .then(res => {
-                        window.location = '/'
+                        //window.location = '/'
+
                     })
                     .catch(err => {
                         this.errors = err.response.data.errors
@@ -111,7 +111,7 @@
     $responsive-mobile: 425px;
     .login{
         width: 600px;
-        min-height: 720px;
+        min-height: 820px;
     }
     .form-control{
         width: 100%;

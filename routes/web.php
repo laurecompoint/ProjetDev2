@@ -1,6 +1,6 @@
 <?php
 
-Route::get('compte', 'AppController@index')->where('any', '.*')->middleware('auth');
+//Route::get('compte', 'AppController@index')->where('any', '.*')->middleware('auth');
 Route::get('/{any}', 'AppController@index')->where('any', '.*');
 Auth::routes();
 

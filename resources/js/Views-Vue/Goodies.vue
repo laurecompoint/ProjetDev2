@@ -11,7 +11,7 @@
                 <b-card cols="4" class="background-image mt-5" style="max-width: 20rem;" align-h="around"  v-for="goodie in goodies" v-bind:key="goodie.id">
                     <div>
                         <h5>{{ goodie.name }}</h5>
-                        <img v-bind:src="goodie.image" class="image mx-auto d-block mt-5"/>
+                        <img v-bind:src="goodie.image" class="picture mx-auto d-block mt-5"/>
                         <p class="mt-5">Prix : {{ goodie.price }}€</p>
 
                         <div class="button-produits"><router-link  v-bind:to="goodie.link">Voir le produit</router-link></div>
@@ -51,16 +51,10 @@
 <style scoped lang="scss">
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
-    .background-slide{
-        background-image: url("../../../public/img/fondproduits.png");
-        background-size: 1500px;
-
-    }
     .background-image{
         height: 390px;
         width: 800%;
     }
-
     .product{
         margin-top: 200px;
         float: right;
@@ -98,7 +92,7 @@
         background-size: 320px;
         border-radius: 10px;
     }
-    .image{
+    .picture{
         width: 70%;
 
     }

@@ -34,7 +34,7 @@ Vue.use(ImageUploader);
 //view import
 window.Vue = require('vue')
 
-Vue.component('Nav', require('./components/Nav.vue').default);
+
 import App from './App.vue'
 import Home from './Views-Vue/Home.vue'
 import MentionLegal from './Views-Vue/MentionLegal.vue'
@@ -51,7 +51,12 @@ import Panier from './Views-Vue/Panier.vue'
 import CreationMugs from './Views-Vue/CreationMugs.vue'
 import CreationCadrePhoto from './Views-Vue/CreationCadrePhoto.vue'
 import CreationCalendrier from './Views-Vue/CreationCalendrier.vue'
+import CreationMemorie from './Views-Vue/CreationMemorie.vue'
+import CreationAlbum from './Views-Vue/CreationAlbum.vue'
 import Error from './Views-Vue/Error.vue'
+
+
+
 
 const router = new VueRouter({
     mode: 'history',
@@ -120,13 +125,13 @@ const router = new VueRouter({
             component: ImageOrdinateur
         },
         {
-            path: '/login',
+            path: '/connexion',
             name: 'login',
             component: Login,
 
         },
         {
-            path: '/register',
+            path: '/inscription',
             name: 'register',
             component: Register,
 
@@ -155,6 +160,16 @@ const router = new VueRouter({
             path: '/creation-calendrier',
             name: 'creation calendrier',
             component: CreationCalendrier
+        },
+        {
+            path: '/creation-memorie',
+            name: 'creation memorie',
+            component: CreationMemorie
+        },
+        {
+            path: '/creation-album',
+            name: 'creation album',
+            component: CreationAlbum
         },
         {
             path:"*",

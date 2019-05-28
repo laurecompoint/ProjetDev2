@@ -8,15 +8,15 @@
             <form @submit.prevent="login" class="mt-5">
                 <label  class="mt-3">Email</label>
                 <small v-if="errors.email">
-                    <p class="m-1 text-danger">
-                        Veuillez saisir votre email
+                    <p class="text-danger" v-for="Error in errors.email">
+                        {{ Error }}
                     </p>
                 </small>
                 <b-form-input type="email" placeholder="Email" v-model="auth.email"></b-form-input>
                 <label class="mt-3">Mot de passe</label>
                 <small v-if="errors.password">
-                    <p class="m-1 text-danger">
-                        Veuillez saisir votre mot de passe
+                    <p class="text-danger" v-for="Error in errors.password">
+                        {{ Error }}
                     </p>
                 </small>
                 <b-form-input type="password"  placeholder="Mot de passe" v-model="auth.password"></b-form-input>
@@ -43,7 +43,7 @@
         },
         methods : {
             login () {
-                axios.post(`${this.api}login`, this.auth)
+                axios.post(`/login`, this.auth)
                     .then(res => {
                         window.location = '/'
                     })
@@ -52,9 +52,6 @@
                         console.log(this.errors)
                     })
             },
-            canSubmit () {
-                return this.auth.email === '' || this.auth.password === ''
-            }
         }
 
     }
