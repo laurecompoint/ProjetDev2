@@ -4,48 +4,56 @@
         <b-navbar-toggle target="nav_collapse" />
         <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav class="ml-auto">
-                <router-link to="/album">Album</router-link>
-                <router-link to="/goodies">Goodies</router-link>
-                <router-link to="/panier">Panier</router-link>
-                <router-link  to="/connexion">Connexion</router-link>
-                <router-link to="/inscription">Inscription</router-link>
-                <div v-bind:if="check()">
+                <router-link  to="/goodies">Goodies</router-link>
+                <div class="" v-if="OnUser()">
                     <b-dropdown size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
                         <template slot="button-content"><font-awesome-icon icon="user" style="font-size:30px; color: white" /></template>
-                        <router-link class="text-dark" to="/compte">Mon Espace</router-link>
+                        <router-link class="text-dark" to="/compte">Mon Espace : {{this.user().firstname}} </router-link>
+                        <p></p>
                         <div class="text-center">
-                            <b-button class="text-white bg-danger"  @click="logout()">Deconexion</b-button>
+                            <a class="buttonlogout"  @click="Onlogout()">Deconexion</a>
                         </div>
                     </b-dropdown>
                 </div>
-
+                <DIV class="mt-3" v-else>
+                    <router-link  to="/login">Connexion</router-link>
+                    <router-link to="/register" >Inscription</router-link>
+                </DIV>
+                <router-link to="/panier">Panier <font-awesome-icon icon="shopping-basket"  style="font-size:20px; color: WHITE;" /></router-link>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
+    import {mapGetters} from 'vuex'
     export default {
         name: "Nav",
         data() {
             return {
-                user: []
+
             }
         },
+        mounted(){
+
+        },
         methods : {
-            logout () {
-                axios.post('/logout')
-                    .then(res => {
-                        document.location.href = "/";
-                    })
-                    .catch(err => {
-                        console.log(err.response)
-                    })
+            ...mapActions([
+                'logout',
+                'setUser'
+            ]),
+            ...mapGetters([
+                'user',
+
+            ]),
+            Onlogout () {
+                this.logout()
             },
-            check(){
+            OnUser(){
+                return this.user()
+            },
 
-
-            }
 
 
         }
@@ -67,7 +75,7 @@
         }
     #nav {
         padding: 1% 5%;
-        background-color: $blue;
+        background-color:  #6C8EAD;
         .logo{
             height: 70px;
         }
@@ -79,6 +87,10 @@
             margin-top: 17px;
 
 
+        }
+        .buttonlogout{
+            color: #6C8EAD;
+            cursor: pointer;
         }
     }
 

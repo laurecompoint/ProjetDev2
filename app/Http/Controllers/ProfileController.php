@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,8 +11,12 @@ class ProfileController extends Controller
 
     public function index()
     {
-        return  Auth::id(1);
+        return $user = Auth::user();
+
+
+
     }
+
     public function update(Request $request)
     {
 

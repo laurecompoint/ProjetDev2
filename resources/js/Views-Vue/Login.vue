@@ -5,7 +5,7 @@
         <div class="line mt-4"></div>
 
         <div class="login m-auto">
-            <form @submit.prevent="login" class="mt-5">
+            <form @submit.prevent="onLogin" class="mt-5">
                 <label  class="mt-3">Email</label>
                 <small v-if="errors.email">
                     <p class="text-danger" v-for="Error in errors.email">
@@ -29,28 +29,29 @@
     </div>
 </template>
 <script>
+    import {mapActions} from 'vuex'
     export default {
         name: "Login",
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
                 auth:{
                     email: '',
                     password: '',
+
                 },
-                errors: {}
+                errors: {
+
+                }
             }
         },
         methods : {
-            login () {
-                axios.post(`/login`, this.auth)
-                    .then(res => {
-                        window.location = '/'
-                    })
-                    .catch(err => {
-                        this.errors = err.response.data.errors
-                        console.log(this.errors)
-                    })
+            ...mapActions([
+                'login',
+                'setUser'
+            ]),
+            onLogin(){
+                this.login(this.auth)
+
             },
         }
 

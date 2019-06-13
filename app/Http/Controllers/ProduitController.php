@@ -15,11 +15,6 @@ class ProduitController extends Controller
 
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         //
@@ -30,19 +25,6 @@ class ProduitController extends Controller
         return Produit::findOrFail($id);
 
     }
-    public function edit()
-    {
-
-    }
 
 
-    public function update(Request $request, Produit $produit)
-    {
-        //
-    }
-
-    public function destroy()
-    {
-
-    }
 }

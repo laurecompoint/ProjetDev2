@@ -2,7 +2,7 @@
     <div class="">
     <h1 class="text-center mt-4">Personnalise votre mugs</h1>
     <div class="line mt-4"></div>
-        <form @submit.prevent="goodies">
+        <form @submit.prevent="order">
         <b-row class="creation">
             <b-col cols="9" md="3" class="text-center">
                 <div class="text-promo mt-5"></div>
@@ -14,7 +14,10 @@
                                         <font-awesome-icon icon="images" style="font-size:40px; color: #3C618C; cursor: pointer" />
                                 </label>
                                 <div class="w-75 m-auto inputtext">
-                                    <b-form-input class="mt-2" maxlength="30" v-model="text" placeholder="Entrer votre text"></b-form-input>
+                                    <input class="mt-2"  type="hidden" v-model="orders.name"  placeholder="name"/>
+                                    <input class="mt-2"  type="hidden" v-model="orders.price"  placeholder="price"/>
+                                    <input class="mt-2"  type="text" v-model="orders.iduser" placeholder="user" />
+                                    <b-form-input class="mt-2" maxlength="30" v-model="orders.text" placeholder="Entrer votre text"></b-form-input>
                                 </div>
 
                     </div>
@@ -23,16 +26,16 @@
             </b-col>
             <b-col cols="12" md="9" class="customizes">
                 <div class="customizesblock">
-                    <div class="image-preview" v-if="imageData.length > 0">
-                        <img class="preview" :src="imageData">
+                    <div class="image-preview" v-if="orders.image.length > 0">
+                        <img class="preview"  :src="orders.image">
                     </div>
-                    <p class="text-center mt-4">{{ text }}</p>
+                    <p class="text-center mt-4">{{ orders.text }}</p>
                 </div>
             </b-col>
         </b-row>
         <b-container>
             <div class="text-center position-button text-center container-fluid">
-                <b-button  class="button" style="">Ajouter au panier</b-button>
+                <b-button type="summit" class="button" style="">Ajouter au panier</b-button>
             </div>
         </b-container>
         </form>
@@ -41,12 +44,22 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
+    import {mapGetters} from 'vuex'
     export default {
         name: "Creation-Mugs",
         data() {
             return {
-                imageData: "",
-                text: 'Votre text sera ici'
+                api: process.env.MIX_API_LOCAL,
+                orders:{
+                    iduser: "",
+                    image: "",
+                    name: "Mugs",
+                    price: "15",
+                    text: 'Votre text sera ici',
+
+                },
+
             };
         },
         methods: {
@@ -60,12 +73,31 @@
 
                     reader.onload = (e) => {
 
-                        this.imageData = e.target.result;
+                        this.orders.image = e.target.result;
                     }
 
                     reader.readAsDataURL(input.files[0]);
                 }
-            }
+            },
+            order(){
+                console.log(this.orders)
+                axios.post(`${this.api}creation-mugs`,  this.orders)
+                    .then(res => {
+                        this.$router.push('/panier')
+
+                    })
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+
+                    })
+            },
+            ...mapActions([
+                'setUser'
+            ]),
+            ...mapGetters([
+                'user',
+
+            ]),
         }
     };
 </script>

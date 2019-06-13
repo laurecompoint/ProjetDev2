@@ -13,7 +13,8 @@ class FaqController extends Controller
         return Faq::all();
 
     }
-    public function contact()
-    {}
+    public function contact(){}
+
+
 
 }

@@ -1,4 +1,60 @@
+$responsive-tablet: 768px;
+$responsive-mobile: 425px;
+$blue : #6C8EAD;
+$white: white;
 
+#apptest{
+  font-family: 'Gravity';
+  .navbar-dark .navbar-toggler{
+    border: none;
+  }
+  button:focus{
+    outline: none;
+  }
+  #nav {
+    padding: 1% 5%;
+    background-color:  #6C8EAD;
+    .logo{
+      height: 70px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 12pt;
+      margin-top: 17px;
+
+
+    }
+  }
+
+  @media (max-width: $responsive-tablet) {
+    background-size: 800px;
+  }
+  @media (max-width: $responsive-mobile) {
+    background-size: 500px;
+  }
+}
+.row-nav{
+  display: flex;
+  justify-content: space-between;
+
+  width: 97%;
+  margin: auto;
+}
+#nav{
+  background-color:  #6C8EAD;
+  padding: 1% 5%;
+}
+.logo{
+  height: 70px;
+}
+.link a{
+  margin-left: 15px;
+}
+.link{
+  margin-top: 24px;
+}
 .background-slide{
   background-image: url("../../public/img/fondcarousel.png");
   background-size: 1500px;

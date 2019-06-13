@@ -72,6 +72,8 @@
                 .then(res => this.produit = res.data)
                 .catch(err => console.log(err))
 
+
+
         }
 
     }

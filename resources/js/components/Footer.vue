@@ -17,16 +17,16 @@
           <b-link  to="/mention-legal" class="link">Mention Légale</b-link>
         </b-col>
       </b-row>
-      <b-row align-h="around" class="m-auto pt-3">
-        <b-col sm="5" md="5">
-          <p class="mt-3 text-align">© 2019 CreativePicture</p>
+      <b-row align-h="between" class="container-fluid m-auto pt-3">
+        <b-col sm="5" md="3" >
+          <p class="mt-3 icon">© 2019 CreativePicture</p>
         </b-col>
         <b-col sm="5" offset-sm="2" md="3" offset-md="0"  class="link-icon">
           <b-row cols="4" class="mt-3 " align-h="around">
-            <b-link cols="4" class="test" href="https://www.messenger.com/"><font-awesome-icon class="fa-2x" :icon="['fab', 'facebook-messenger']"/></b-link>
-            <b-link cols="4" href="https://www.instagram.com/?hl=fr"><font-awesome-icon class="fa-2x" :icon="['fab', 'instagram']"/></b-link>
-            <b-link cols="4" href="https://fr-fr.facebook.com/"><font-awesome-icon class="fa-2x" :icon="['fab', 'facebook']"/></b-link>
-            <b-link cols="4" href="https://twitter.com/cvostfr"><font-awesome-icon class="fa-2x" :icon="['fab', 'twitter']"/></b-link>
+            <b-link cols="4" class="test" href="https://www.messenger.com/"><font-awesome-icon class="fa-2x iconsociaux" :icon="['fab', 'facebook-messenger']"/></b-link>
+            <b-link cols="4" href="https://www.instagram.com/?hl=fr"><font-awesome-icon class="fa-2x iconsociaux" :icon="['fab', 'instagram']"/></b-link>
+            <b-link cols="4" href="https://fr-fr.facebook.com/"><font-awesome-icon class="fa-2x iconsociaux" :icon="['fab', 'facebook']"/></b-link>
+            <b-link cols="4" href="https://twitter.com/cvostfr"><font-awesome-icon class="fa-2x iconsociaux" :icon="['fab', 'twitter']"/></b-link>
           </b-row>
         </b-col>
 
@@ -50,7 +50,7 @@ export default {
     background-color: #6C8EAD;
     color: white;
   }
-    a, i, link{
+    a, i, link, .iconsociaux{
     color: white;
     }
   .button-login-register{
@@ -71,7 +71,7 @@ export default {
     text-align: right;
   }
   .icon{
-    margin-left: 10px;
+    margin-left: 42px;
   }
   .line{
     background-color: #3D628D;
@@ -81,7 +81,7 @@ export default {
     margin-left: 10px;
   }
   .link-icon{
-    margin-left: 300px;
+    margin-left: 200px;
   }
   .text-align{
     margin-left: 11px;

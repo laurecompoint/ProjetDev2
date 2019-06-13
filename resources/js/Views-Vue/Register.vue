@@ -3,7 +3,7 @@
     <h1 class="text-center mt-4">Inscription</h1>
     <div class="line mt-4"></div>
     <div class="login m-auto">
-        <form  @submit.prevent="register">
+        <form  @submit.prevent="Onregister">
         <b-row align-h="center"  class="mt-5">
             <b-col cols="6">
                 <label  class="mt-3">Nom</label>
@@ -69,6 +69,7 @@
 </div>
 </template>
 <script>
+    import {mapActions} from 'vuex'
     export default {
         name: "Register",
         data() {
@@ -88,16 +89,12 @@
             }
         },
         methods : {
-            register() {
-                axios.post(`/register`,  this.auth)
-                    .then(res => {
-                        //window.location = '/'
-
-                    })
-                    .catch(err => {
-                        this.errors = err.response.data.errors
-
-                    })
+            ...mapActions([
+                'register',
+                'setUser'
+            ]),
+            Onregister() {
+                this.register(this.auth)
             },
 
             confirmpassword () {

@@ -1,42 +1,66 @@
-.line-auth {
-  background-color: #3D628D;
-  height: 15px;
-  margin-left: -10px;
-  width: 102%;
+#apptest {
+  font-family: "Gravity";
 }
 
-.title-auth {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.background {
-  background-image: url(/images/fondbackground.png?cd8dcf22dec3f0c15ebdaf3c501b1f76);
-  background-size: 1500px;
-}
-
-.login {
-  width: 600px;
-  min-height: 720px;
-}
-
-.form-control {
-  width: 100%;
-  border-radius: 0px;
-  border: Solid #6C8EAD 3px;
-}
-
-.button-login-register {
-  float: right;
-  background-color: #3D628D;
-  border-radius: 10px;
+#apptest .navbar-dark .navbar-toggler {
   border: none;
 }
 
-@media (max-width: 425px) {
-  .login {
-    width: 300px;
+#apptest button:focus {
+  outline: none;
+}
+
+#apptest #nav {
+  padding: 1% 5%;
+  background-color: #6C8EAD;
+}
+
+#apptest #nav .logo {
+  height: 70px;
+}
+
+#apptest #nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  font-size: 12pt;
+  margin-top: 17px;
+}
+
+@media (max-width: 768px) {
+  #apptest {
+    background-size: 800px;
   }
+}
+
+@media (max-width: 425px) {
+  #apptest {
+    background-size: 500px;
+  }
+}
+
+.row-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  margin: auto;
+}
+
+#nav {
+  background-color: #6C8EAD;
+  padding: 1% 5%;
+}
+
+.logo {
+  height: 70px;
+}
+
+.link a {
+  margin-left: 15px;
+}
+
+.link {
+  margin-top: 24px;
 }
 
 .background-slide {

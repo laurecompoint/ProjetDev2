@@ -2,6 +2,27 @@
   <div class="add">
     <img class="arrow-down" src="img/fleche.png"/>
   <carousel :per-page="1"  class="background-slide">
+    <slide class="slide d-flex align-content-center align-items-center">
+      <b-container class="">
+        <b-row align-v="center" class="margin-slide">
+          <b-col cols="3" md="3" align-self="start">
+            <div class="produits-losange-home">
+              <div class="text-promotion text-center">
+                <h4 class="color">-20%</h4>
+                <H4>SUR TOUS <br> LES GOODIES</H4>
+                Avec le code  <p class="color">Promo&Goodies</p>
+              </div>
+            </div>
+          </b-col>
+          <b-col cols="3" md="3" align-self="end" class="text-center">
+            <b-button class="button" to="/goodies" >J'en profite</b-button>
+          </b-col>
+          <b-col cols="3" md="3" align-self="start" class="mb-5">
+            <img src="img/goodies.png" class="imagetwo"/>
+          </b-col>
+        </b-row>
+      </b-container>
+    </slide>
     <slide class="slide d-flex align-content-center align-items-center ml-5">
       <b-container class="">
         <b-row align-v="center" class="margin-slide">
@@ -23,29 +44,9 @@
         </b-row>
       </b-container>
     </slide>
-    <slide class="slide d-flex align-content-center align-items-center">
-      <b-container class="">
-        <b-row align-v="center" class="margin-slide">
-          <b-col cols="3" md="3" align-self="start">
-            <div class="produits-losange-home">
-              <div class="text-promotion text-center">
-                <h4 class="color">-20%</h4>
-                <H4>SUR TOUS <br> LES GOODIES</H4>
-                Avec le code  <p class="color">Promo&Goodies</p>
-              </div>
-            </div>
-          </b-col>
-          <b-col cols="3" md="3" align-self="end" class="text-center">
-            <b-button class="button" to="/goodies">J'en profite</b-button>
-          </b-col>
-          <b-col cols="3" md="3" align-self="start" class="mb-5">
-            <img src="img/goodies.png" class="imagetwo"/>
-          </b-col>
-        </b-row>
-      </b-container>
-    </slide>
+
   </carousel>
-    <h3 class="title mt-5">Retrouver nos produits</h3>
+    <router-link to="/goodies"> <h3 class="title mt-5">Retrouver nos produits</h3></router-link>
     <div class="contain-white mt-5">
       <div class="products">
         <div class="flex-column background-image block text-center pt-5">
@@ -73,7 +74,7 @@
         </div>
       </div>
     </div>
-    <h3 class="title mt-5">Notre entreprise</h3>
+    <router-link to="/entreprise"><h3 class="title mt-5">Notre entreprise</h3></router-link>
 
     <b-container class="bv-example-row mt-5 pb-5">
     <b-row align-h="between">
@@ -145,7 +146,8 @@ export default {
     width: 190px;
     height: 50px;
     border-radius: 12px;
-    margin-left: 80px;
+    margin-left: 140px;
+    color: white;
   }
   .button2{
     background-color: #3C618C;
@@ -153,6 +155,7 @@ export default {
     width: 130px;
     height: 40px;
     border-radius: 10px;
+    color: white;
   }
   :hover button{
     background-color: #3C618C;
@@ -162,6 +165,9 @@ export default {
   }
   .margin-slide{
     margin-left: 45px
+  }
+  a{
+    color: black;
   }
   @media (max-width: $responsive-tablet) {
     .contain-white{

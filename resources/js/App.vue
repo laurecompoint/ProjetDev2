@@ -1,8 +1,8 @@
 <template>
     <div id="app">
         <div>
-            <Nav></Nav>
-            <router-view/>
+            <Nav ></Nav>
+            <router-view />
             <Footer/>
         </div>
     </div>
@@ -11,11 +11,21 @@
 <script>
     import Footer from './components/Footer'
     import Nav from './components/Nav'
+    import {mapActions} from 'vuex'
 
     export default {
         components:{
             Footer,
             Nav,
+        },
+        methods: {
+            ...mapActions([
+                'setUser',
+
+            ])
+        },
+        created () {
+            this.setUser()
         }
     }
 

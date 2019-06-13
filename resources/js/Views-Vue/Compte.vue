@@ -1,21 +1,19 @@
 <template>
-    <div class="background text-justify" >
-
+    <div class="background text-justify">
         <h1 class="text-center mt-4">Mon compte</h1>
         <div class="line mt-4"></div>
-        <b-row align-h="between" class="mt-3 pb-5"  v-bind:key="user.id">
+        <b-row align-h="between" class="mt-3 pb-5" >
             <div class="info" cols="5">
                 <h3 class="mt-5">Information</h3>
-                <p class="mt-5"><strong>Nom : </strong> {{ user.lastname }} </p>
-                <p><strong>Prénom : </strong> {{ user.firstname }}</p>
-                <p><strong>Adresse :  </strong>{{ user.adresse }}</p>
-                <p><strong>Mail : </strong>{{ user.email }}</p>
-                <p><strong>Numéro de téléphone : </strong>{{ user.tel }}</p>
-                <b-button to="/profile-modif" class="mt-3 mb-5 button-compte">Modifier vos info</b-button>
+                <p class="mt-5"><strong>Nom : </strong> {{this.user().lastname}} </p>
+                <p><strong>Prénom : </strong> {{this.user().firstname}} </p>
+                <p><strong>Adresse :  </strong>{{this.user().adresse}} </p>
+                <p><strong>Mail : </strong> {{this.user().email}}</p>
+                <p><strong>Numéro de téléphone : </strong>{{this.user().tel}} </p>
+                <router-link  class="btn button-compte" to="/profile-modif">Modifier vos info</router-link>
             </div>
             <b-col cols="4" class="user"> <p CLASS="text-center mt-5"><font-awesome-icon icon="user" style="font-size:200px; color: #3C618C" /></p></b-col>
         </b-row>
-
         <b-row align-v="start" class="pb-3 responsive-margin mt-5">
             <h3 v-b-toggle.collapse-1 class="mt-5 info">Historique de commande</h3>
             <font-awesome-icon v-b-toggle.collapse-1 icon="angle-down" class="icon mt-5 ml-3" style="font-size:40px; color: #3C618C" />
@@ -48,6 +46,8 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
+    import {mapGetters} from 'vuex'
     export default {
         name: "Compte",
         created () {
@@ -55,14 +55,21 @@
         },
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
-                user: [],
+
+
             }
         },
-        mounted () {
-            axios.get(`${this.api}compte`)
-                .then(res => this.user = res.data)
-                .catch(err => console.log(err))
+        methods : {
+            ...mapActions([
+                'logout',
+                'setUser'
+            ]),
+            ...mapGetters([
+                'user',
+
+            ]),
+
+
 
         }
     }
@@ -71,19 +78,22 @@
 <style scoped lang="scss">
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
+    .button-compte, :hover .button-compte{
+        background-color: #6C8EAD;
+        margin-top: 10px;
+        border-radius: 7px;
+        border: none;
+        height: 40px;
+        color: white;
+    }
     .info{
-        padding-left: 105px;
+        padding-left: 145px;
     }
     .title{
         padding-left: 90px;
     }
     .history{
-        margin-left: 108px;
-    }
-    .button-compte{
-        background-color: #6C8EAD;
-        border-radius: 10px;
-        border: none;
+        margin-left: 168px;
     }
     .background{
         min-height: 900px;
