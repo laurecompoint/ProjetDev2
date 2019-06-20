@@ -17,13 +17,10 @@ class AdminProduitController extends Controller
         $validate = $request->validate([
             'name' => ['required'],
             'image' => ['required'],
-            'price' => ['required', 'number'],
+            'price' => ['required'],
             'content' => ['required'],
-            'goodies' => ['required'],
             'description' => ['required'],
-            'link' => ['required'],
             'fabrication' => ['required'],
-            'linkcreation' => ['required'],
 
         ]);
 
@@ -31,12 +28,12 @@ class AdminProduitController extends Controller
         $produit->name = $request->name;
         $produit->image =  $request->image;
         $produit->price =  $request->price;
-        $produit->content =  $request->content;
-        $produit->goodies = $request->goodies;
+        $produit->goodies = 1;
         $produit->description =  $request->description;
-        $produit->link =  $request->link;
+        $produit->link =  $request->name;
         $produit->fabrication =  $request->fabrication;
-        $produit->linkcreation =  $request->linkcreation;
+        $produit->linkcreation =   $request->name;
+        //$produit->content =   $request->content;
         $produit ->save();
     }
     public function update(Request $request, Produit $produit)

@@ -21,6 +21,7 @@
 </template>
 
 <script>
+
     export default {
         name: "FaqsModif",
         data() {
@@ -30,7 +31,7 @@
             }
         },
         mounted (id) {
-            console.log(id)
+            console.log(this.faqs.id)
             axios.get(`${this.api}faqs-modif/${id}`)
                 .then(res => this.faqs = res.data)
                 .catch(err => console.log(err))

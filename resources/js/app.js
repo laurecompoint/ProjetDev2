@@ -23,14 +23,12 @@ Vue.use(VueCarousel);
 
 
 //font awesome : icon
-library.add( faCamera, faQuestion, faPencilAlt, faTrash, faPlusCircle, faPaperPlane, faImages, faCartArrowDown, faTruck, faLongArrowAltDown, faFacebook, faTwitter, faInstagram, faFacebookMessenger, faMapMarkerAlt, faAt,  faTty, faUser, faAngleDown, faShoppingBasket)
+library.add( faTimes, faTextHeight, faCamera, faQuestion, faPencilAlt, faTrash, faPlusCircle, faPaperPlane, faImages, faCartArrowDown, faTruck, faLongArrowAltDown, faFacebook, faTwitter, faInstagram, faFacebookMessenger, faMapMarkerAlt, faAt,  faTty, faUser, faAngleDown, faShoppingBasket)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {  faCamera, faQuestion, faPencilAlt, faTrash, faPlusCircle, faPaperPlane, faImages, faCartArrowDown, faTruck, faLongArrowAltDown, faMapMarkerAlt, faAt, faTty, faUser, faAngleDown, faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
+import {  faTimes, faTextHeight, faCamera, faQuestion, faPencilAlt, faTrash, faPlusCircle, faPaperPlane, faImages, faCartArrowDown, faTruck, faLongArrowAltDown, faMapMarkerAlt, faAt, faTty, faUser, faAngleDown, faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter, faInstagram, faFacebookMessenger } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-
 
 new Vue({
     router,
@@ -38,4 +36,5 @@ new Vue({
     render: h => h(App)
 
 }).$mount('#app')
+
 

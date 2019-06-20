@@ -1,11 +1,11 @@
 export default{
     state: {
-        user: null
+        user: null,
     },
     mutations:{
         SET_USER(state, payload){
             state.user = payload
-        }
+        },
     },
     actions:{
         login({commit, dispatch}, payload){
@@ -35,6 +35,7 @@ export default{
                 commit('SET_USER', user)
             })
         },
+
         logout({commit}){
             axios.post('/logout')
                 .then(res => {
@@ -44,13 +45,87 @@ export default{
                     console.log(err.response)
                 })
             commit('SET_USER', null)
-        }
+        },
+        order({commit, dispatch}, payload){
+            axios.post(`/creation-mugs`,  payload)
+                .then(res => {
+                    //this.$router.push('/panier')
+                    window.location = 'panier'
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+
+                })
+        },
+        orderCadrePhoto({commit, dispatch}, payload){
+            axios.post(`/creation-cadrephoto`,  payload)
+                .then(res => {
+                    //this.$router.push('/panier')
+                    window.location = 'panier'
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+
+                })
+        },
+        orderUsb({commit, dispatch}, payload){
+            axios.post(`/creation-usb`,  payload)
+                .then(res => {
+                    //this.$router.push('/panier')
+                    window.location = 'panier'
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+
+                })
+        },
+        udapteprofil({commit, dispatch}, payload){
+            axios.post('/profile-modif', payload)
+                .then(res =>{
+                    window.location = '/'
+                })
+                .catch(err =>{
+                    this.errors = err.response.data.errors
+                })
+        },
+        faqsnew({commit, dispatch}, payload) {
+            axios.post(`/new-faqs`, payload)
+                .then(res => {
+                    //this.router.push('/admin-faqs')
+                    window.location = 'admin-faqs'
+
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+
+                })
+        },
+        productnew({commit, dispatch}, payload) {
+            axios.post(`/new-produits`,  payload)
+                .then(res => {
+                    window.location = 'admin-produit'
+                    //this.$router.push('/admin-produits')
+
+                })
+                .catch(err => {
+                    this.errors = err.response.data.errors
+
+                })
+        },
+
+
+
+
+
     },
     getters: {
         user(state){
             return state.user
         },
 
-    }
+
+
+    },
+
 
 }

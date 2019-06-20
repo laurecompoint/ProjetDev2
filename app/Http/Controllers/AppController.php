@@ -10,16 +10,19 @@ class AppController extends Controller
 
     public function index ()
     {
-        $user = Auth::user();
-        return view('app', [
-            'user' => $user,
-        ]);
-
-
+        return view('app');
     }
+    public function indexadmin ()
+    {
 
+        if (Auth::user()->admin == 0) {
+            return redirect('/');
+        }
+        return view('appadmin');
+    }
     public function getUser ()
     {
         return Auth::user();
     }
+
 }

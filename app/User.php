@@ -10,11 +10,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+
+    public function order()
+    {
+        return $this->belongsToMany(Order::class);
+    }
     protected $fillable = [
         'firstname', 'lastname', 'tel', 'adresse', 'email', 'password',
     ];

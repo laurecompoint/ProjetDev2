@@ -4,12 +4,11 @@
         <b-navbar-toggle target="nav_collapse" />
         <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav class="ml-auto">
-                <router-link  to="/goodies">Goodies</router-link>
+                <router-link  to="/objets-personnalisés">Goodies</router-link>
                 <div class="" v-if="OnUser()">
                     <b-dropdown size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
                         <template slot="button-content"><font-awesome-icon icon="user" style="font-size:30px; color: white" /></template>
-                        <router-link class="text-dark" to="/compte">Mon Espace : {{this.user().firstname}} </router-link>
-                        <p></p>
+                        <router-link class="text-dark"  to="/compte"><h6 class="text-center">Mon Espace : {{user().firstname}}</h6> </router-link>
                         <div class="text-center">
                             <a class="buttonlogout"  @click="Onlogout()">Deconexion</a>
                         </div>
@@ -35,9 +34,6 @@
 
             }
         },
-        mounted(){
-
-        },
         methods : {
             ...mapActions([
                 'logout',
@@ -56,7 +52,10 @@
 
 
 
-        }
+        },
+        mounted(){
+            console.log(this.user.id)
+        },
     }
 </script>
 

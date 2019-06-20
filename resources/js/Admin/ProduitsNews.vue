@@ -4,7 +4,7 @@
         <h1 class="text-center mt-4">Ajouter Produit</h1>
         <div class="line mt-4"></div>
         <b-row align-h="between" class="mt-3 pb-5">
-            <form  @submit.prevent="faqsnew">
+            <form  @submit.prevent="Onproductnew">
                 <div class="info" cols="6">
                     <label  class="mt-5 email">Nom du produit</label>
                     <small v-if="errors.name">
@@ -33,7 +33,21 @@
                             {{ Error }}
                         </p>
                     </small>
-                    <b-form-input type="text" v-model="produits.content" placeholder="prix"></b-form-input>
+                    <b-form-input type="text" v-model="produits.content" placeholder="content"></b-form-input>
+                    <label  class="mt-3 email">Description</label>
+                    <small v-if="errors.content">
+                        <p class="text-danger" v-for="Error in errors.description">
+                            {{ Error }}
+                        </p>
+                    </small>
+                    <b-form-input type="text" v-model="produits.description" placeholder="description"></b-form-input>
+                    <label  class="mt-3 email">Fabrication</label>
+                    <small v-if="errors.fabrication">
+                        <p class="text-danger" v-for="Error in errors.fabrication">
+                            {{ Error }}
+                        </p>
+                    </small>
+                    <b-form-input type="text" v-model="produits.fabrication" placeholder="delai-fabrication"></b-form-input>
                     <b-button type="submit" class="mt-3 mb-5 button-compte">Ajouter</b-button>
                 </div>
             </form>
@@ -44,33 +58,28 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     export default {
         name: "FaqsNews",
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
                 produits:{
                     name: '',
                     image: '',
                     price: '',
                     content: '',
+                    description: '',
+                    fabrication: "",
                 },
-                errors: {
-
-                }
+                errors: {}
             }
         },
         methods : {
-            faqsnew() {
-                axios.post(`${this.api}produits-new`,  this.produits)
-                    .then(res => {
-                        this.$router.push('/admin-produits')
-
-                    })
-                    .catch(err => {
-                        this.errors = err.response.data.errors
-
-                    })
+            ...mapActions([
+                'productnew'
+            ]),
+            Onproductnew() {
+                this.productnew(this.produits)
             },
 
         }

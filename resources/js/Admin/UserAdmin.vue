@@ -43,36 +43,25 @@
         },
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
-                users: [
-
-
-                ]
+                users: []
             }
         },
         mounted () {
-            axios.get(`${this.api}admin-user`)
+            axios.get(`/user-admin`)
                 .then(res => this.users = res.data)
-                .catch(err => console.log(err)
-
-                )
+                .catch(err => console.log(err))
 
         },
         methods : {
             userdelete(id) {
-                axios.post(`${this.api}admin-user/${id}`)
+                axios.post(`/user-admin/${id}`)
                     .then(res => {
-                        window.location = '/admin-user'
-
-                    })
+                        window.location = '/admin-user'})
                     .catch(err => {
                         this.errors = err.response.data.errors
-
                     })
             },
-
         }
-
     }
 </script>
 

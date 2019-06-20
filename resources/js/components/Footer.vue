@@ -89,6 +89,7 @@ export default {
   #us{
     text-align: right;
   }
+
   @media (max-width: $responsive-mobile) {
     .text-align{
       margin-left: 0px;

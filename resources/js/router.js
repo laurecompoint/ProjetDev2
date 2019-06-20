@@ -1,24 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from './store/store'
 Vue.use(VueRouter)
 
-import Home from './Views-Vue/Home.vue'
-import MentionLegal from './Views-Vue/MentionLegal.vue'
-import Entreprise from './Views-Vue/Entreprise.vue'
-import Goodies from './Views-Vue/Goodies.vue'
-import Produits from './Views-Vue/Produits.vue'
-import Compte from './Views-Vue/Compte.vue'
-import FaqContact from './Views-Vue/FaqContact.vue'
-import Login from './Views-Vue/Login.vue'
-import Register from './Views-Vue/Register.vue'
-import Profile from './Views-Vue/Profil.vue'
-import Panier from './Views-Vue/Panier.vue'
-import CreationMugs from './Views-Vue/CreationMugs.vue'
-import CreationCadrePhoto from './Views-Vue/CreationCadrePhoto.vue'
-import CreationCalendrier from './Views-Vue/CreationCalendrier.vue'
-import CreationMemorie from './Views-Vue/CreationMemorie.vue'
-import CreationAlbum from './Views-Vue/CreationAlbum.vue'
+import Home from './VueFront/Home.vue'
+import MentionLegal from './VueFront/MentionLegal.vue'
+import Entreprise from './VueFront/Entreprise.vue'
+import Goodies from './VueFront/Goodies.vue'
+import Produits from './VueFront/Produits.vue'
+import Compte from './VueFront/Compte.vue'
+import FaqContact from './VueFront/FaqContact.vue'
+import Login from './VueFront/Login.vue'
+import Register from './VueFront/Register.vue'
+import Profile from './VueFront/Profil.vue'
+import Panier from './VueFront/Panier.vue'
+import CreationMugs from './VueFront/CreationMugs.vue'
+import CreationUsb from './VueFront/CreationUsb.vue'
+import CreationCadrePhoto from './VueFront/CreationCadrePhoto.vue'
+import CreationCalendrier from './VueFront/CreationCalendrier.vue'
+import CreationMemorie from './VueFront/CreationMemorie.vue'
+import CreationAlbum from './VueFront/CreationAlbum.vue'
 import HomeAdmin from './Admin/HomeAdmin.vue'
 import FaqsAdmin from './Admin/FaqsAdmin.vue'
 import FaqsModif from './Admin/FaqsModif.vue'
@@ -29,8 +29,6 @@ import UserAdmin from './Admin/UserAdmin.vue'
 import UserNew from './Admin/UsersNews.vue'
 import OrderAdmin from './Admin/OrderAdmin.vue'
 import Error from './Views-Vue/Error.vue'
-
-
 
 const router = new VueRouter({
     mode: 'history',
@@ -44,15 +42,15 @@ const router = new VueRouter({
         {
             path: '/mention-legal',
             name: 'mention-legal',
-            component: MentionLegal
+            component: MentionLegal,
         },
         {
             path: '/entreprise',
             name: 'entreprise',
-            component: Entreprise
+            component: Entreprise,
         },
         {
-            path: '/goodies',
+            path: '/objets-personnalisés',
             name: 'goodies',
             component: Goodies,
         },
@@ -76,13 +74,17 @@ const router = new VueRouter({
             name: 'produits5',
             component: Produits
         },
+        {
+            path: '/cle-usb',
+            name: 'produits6',
+            component: Produits
+        },
 
         {
 
             path: '/compte',
             name: 'compte',
             component: Compte,
-
 
         },
         {
@@ -122,6 +124,11 @@ const router = new VueRouter({
             path: '/creation-mugs',
             name: 'creatiomugs',
             component: CreationMugs
+        },
+        {
+            path: '/creation-usb',
+            name: 'creationusb',
+            component: CreationUsb
         },
         {
             path: '/creation-cadrephoto',

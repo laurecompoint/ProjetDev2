@@ -19,7 +19,7 @@
                             <b-button-group>
 
                                 <router-link to="/produits-modif"><font-awesome-icon class="mr-3" icon="pencil-alt" style="font-size:20px; color: #3C618C; cursor: pointer" /></router-link>
-                                <form @submit.prevent="userdelete(produit.id)" method="POST">
+                                <form @submit.prevent="produitdelete(produit.id)" method="POST">
                                     <button class="btn btn-outline-danger"  type="submit">  <font-awesome-icon icon="trash" style="font-size:20px; color: #3d628d; cursor: pointer" /></button>
                                 </form>
 
@@ -52,16 +52,17 @@
             }
         },
         mounted () {
-            axios.get(`${this.api}admin-produit`)
+            axios.get(`/produit-admin`)
                 .then(res => this.produits = res.data)
                 .catch(err => console.log(err))
 
         },
         methods : {
-            userdelete(id) {
-                axios.post(`${this.api}admin-produit/${id}`)
+            produitdelete(id) {
+                axios.post(`/produit-admin/${id}`)
                     .then(res => {
                         window.location = '/admin-produit'
+
                     })
                     .catch(err => {
                         this.errors = err.response.data.errors

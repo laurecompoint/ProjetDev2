@@ -19,7 +19,7 @@
                         <td>
                             <b-button-group>
 
-                                <router-link to="/faqs-modif"><font-awesome-icon class="mr-3" icon="pencil-alt" style="font-size:20px; color: #3C618C; cursor: pointer" /></router-link>
+                                <button ><font-awesome-icon class="mr-3" icon="pencil-alt" style="font-size:20px; color: #3C618C; cursor: pointer" /></button>
                                 <form @submit.prevent="faqdelete(faq.id)" method="POST">
                                 <button class="btn btn-outline-danger"  type="submit">  <font-awesome-icon icon="trash" style="font-size:20px; color: #3d628d; cursor: pointer" /></button>
                                 </form>
@@ -31,15 +31,15 @@
 
 
                 </table>
-
-
             </b-col>
         </b-row>
     </div>
 </template>
 
 <script>
+
     import NavAdmin from './NavAdmin.vue'
+
     export default {
         name: "FagsAdmin",
         components:{
@@ -47,22 +47,18 @@
         },
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
-                faqs: [
-
-
-                ]
+                faqs: []
             }
         },
         mounted () {
-            axios.get(`${this.api}admin-faqs`)
-                .then(res => this.faqs = res.data)
-                .catch(err => console.log(err))
+               axios.get(`/faq-admim`)
+                    .then(res => this.faqs = res.data)
+                    .catch(err => console.log(err))
 
         },
         methods : {
             faqdelete(id) {
-                axios.post(`${this.api}admin-faqs/${id}`)
+                axios.post(`/faq-admim/${id}`)
                     .then(res => {
                         window.location = '/admin-faqs'
 
@@ -72,6 +68,7 @@
 
                     })
             },
+
 
 
         }

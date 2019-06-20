@@ -4,7 +4,7 @@
         <h1 class="text-center mt-4">Ajouter Faq</h1>
         <div class="line mt-4"></div>
         <b-row align-h="between" class="mt-3 pb-5">
-            <form  @submit.prevent="faqsnew">
+            <form  @submit.prevent="Onfaqsnew">
             <div class="info" cols="6">
                 <label  class="mt-5 email">Catégorie</label>
                 <small v-if="errors.name">
@@ -37,11 +37,11 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     export default {
         name: "FaqsNews",
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
                 faqs:{
                     name: '',
                     question: '',
@@ -53,16 +53,11 @@
             }
         },
         methods : {
-            faqsnew() {
-                axios.post(`${this.api}faqs-new`,  this.faqs)
-                    .then(res => {
-                        this.$router.push('/admin-faqs')
-
-                    })
-                    .catch(err => {
-                        this.errors = err.response.data.errors
-
-                    })
+            ...mapActions([
+                'faqsnew'
+            ]),
+            Onfaqsnew() {
+                this.faqsnew(this.faqs)
             },
 
         }

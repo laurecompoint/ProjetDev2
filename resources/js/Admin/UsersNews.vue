@@ -79,7 +79,6 @@
         name: "UsersNews",
         data() {
             return {
-                api: process.env.MIX_API_LOCAL,
                 users:{
                     lastname: '',
                     firstname: '',
@@ -90,17 +89,14 @@
                     confirmPassword: '',
                     admin: ''
                 },
-
                 errors: {},
-
             }
         },
         methods : {
-
             usernew() {
-                axios.post(`${this.api}users-new`,  this.users)
+                axios.post(`/new-users`,  this.users)
                     .then(res => {
-                        this.$router.push('/admin-users')
+                        this.$router.push('/admin-user')
 
                     })
                     .catch(err => {
@@ -108,8 +104,6 @@
 
                     })
             },
-
-
         },
         mounted () {
             console.log(this.users.admin);
