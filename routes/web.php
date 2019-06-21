@@ -1,27 +1,27 @@
 <?php
 //route web get et post
-Route::post('/creation-mugs', 'OrderController@create')->middleware('auth');
-Route::post('/creation-cadrephoto', 'OrderController@create')->middleware('auth');
-Route::post('/creation-usb', 'OrderController@create')->middleware('auth');
-Route::post('/creation-memorie', 'OrderController@create')->middleware('auth');
+Route::post('/creation-mugs', 'Front\OrderController@create')->middleware('auth');
+Route::post('/creation-cadrephoto', 'Front\OrderController@create')->middleware('auth');
+Route::post('/creation-usb', 'Front\OrderController@create')->middleware('auth');
+Route::post('/creation-memorie', 'Front\OrderController@create')->middleware('auth');
 Route::get('/getUser', 'AppController@getUser');
-Route::get('/panieruser', 'OrderController@panieruser')->middleware('auth');
-Route::get('/goodies/{id}', 'ProduitController@show');
-Route::get('/goodies', 'ProduitController@index');
-Route::post('/profile-modif', 'ProfileController@update')->middleware('auth');
-Route::get('/faq', 'FaqController@index');
-Route::post('/order-delete/{id}', 'OrderController@destroy');
+Route::get('/panieruser', 'Front\OrderController@panieruser')->middleware('auth');
+Route::get('/goodies/{id}', 'Front\ProduitController@show');
+Route::get('/goodies', 'Front\ProduitController@index');
+Route::post('/profile-modif', 'User\ProfileController@update')->middleware('auth');
+Route::get('/faq', 'Front\FaqController@index');
+Route::post('/order-delete/{id}', 'Front\OrderController@destroy');
 
 //admin route
-Route::get('/faq-admim', 'AdminFaqController@index');
-Route::post('/faq-admim/{id}', 'AdminFaqController@destroy');
-Route::post('/new-faqs', 'AdminFaqController@create');
-Route::get('/produit-admin', 'AdminProduitController@index');
-Route::post('/new-produits', 'AdminProduitController@create_admin');
-Route::post('/produit-admin/{id}', 'AdminProduitController@destroy');
-Route::get('/user-admin', 'AdminUserController@index');
-Route::post('/new-users', 'AdminUserController@create');
-Route::post('/user-admin/{id}', 'AdminUserController@destroy');
+Route::get('/faq-admim', 'Admin\AdminFaqController@index');
+Route::post('/faq-admim/{id}', 'Admin\AdminFaqController@destroy');
+Route::post('/new-faqs', 'Admin\AdminFaqController@create');
+Route::get('/produit-admin', 'Admin\AdminProduitController@index');
+Route::post('/new-produits', 'Admin\AdminProduitController@create_admin');
+Route::post('/produit-admin/{id}', 'Admin\AdminProduitController@destroy');
+Route::get('/user-admin', 'Admin\AdminUserController@index');
+Route::post('/new-users', 'Admin\AdminUserController@create');
+Route::post('/user-admin/{id}', 'Admin\AdminUserController@destroy');
 
 
 //user not log redirection

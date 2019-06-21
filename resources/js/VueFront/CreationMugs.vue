@@ -56,7 +56,7 @@
                 orders:{
                     image: "",
                     name: "Mugs",
-                    price: "15",
+                    price: 15,
                     text: 'Votre text sera ici',
                     nombrephoto: '1',
                 },

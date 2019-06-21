@@ -73,7 +73,7 @@
     .contact{
         padding-left: 92px;
     }
-    .button2{
+    :hover .button2{
         background-color: #3C618C;
         border: none;
         width: 130px;

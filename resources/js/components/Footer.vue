@@ -4,7 +4,7 @@
         <b-col sm="5" md="3" class="footerlink">
           <p >Nos produits :</p>
           <b-link to="/album" class="link">Album</b-link> <br>
-          <b-link to="/goodies" class="link">Object</b-link>
+          <b-link to="/objets-personnalisés" class="link">Objets</b-link>
         </b-col>
         <b-col sm="5" md="3" class="text-center">
           <p class="text-footer">Besoin d'aide ?</p>

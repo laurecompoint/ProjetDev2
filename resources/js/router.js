@@ -28,7 +28,7 @@ import ProduitsNew from './Admin/ProduitsNews.vue'
 import UserAdmin from './Admin/UserAdmin.vue'
 import UserNew from './Admin/UsersNews.vue'
 import OrderAdmin from './Admin/OrderAdmin.vue'
-import Error from './Views-Vue/Error.vue'
+import Error from './VueFront/Error.vue'
 
 const router = new VueRouter({
     mode: 'history',

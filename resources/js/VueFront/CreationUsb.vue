@@ -49,10 +49,10 @@
         data() {
             return {
                 orders:{
-                    name: "Mugs",
+                    name: "Usb",
                     price: "15",
                     text: 'Votre text sera ici',
-                    nombrephoto: 'Pas de photo (Text seulement)',
+                    nombrephoto: '0',
                 },
             };
         },

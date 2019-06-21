@@ -18,7 +18,7 @@ class AppController extends Controller
         if (Auth::user()->admin == 0) {
             return redirect('/');
         }
-        return view('appadmin');
+        return view('app');
     }
     public function getUser ()
     {

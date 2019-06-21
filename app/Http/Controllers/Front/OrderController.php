@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
+use App\Http\Controllers\Controller;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,17 +27,20 @@ class OrderController extends Controller
         $order->text =  $request->text;
         $order->users_id =  Auth::user()->id;
         $order->image =  $request->image;
-        $order->nombreimage =  $request->nombreimage;
+        $order->nombrephoto =  $request->nombrephoto;
        $order ->save();
 
     }
     public function panieruser()
     {
-        return $orders = Order::all()->where('users_id', '==',  Auth::user()->id);
+
+        return  Order::all()->where('users_id', '==',  Auth::user()->id);
+
     }
     public function destroy(Request $request, Order $order)
     {
         $order = Order::find($order->id = $request->id);
         $order->delete();
     }
+
 }

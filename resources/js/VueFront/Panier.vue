@@ -9,8 +9,8 @@
         </div>
         <b-container class="bv-example-row">
             <b-row align-h="between">
-                <b-col cols="4" md="6" class="">
-                    <h3 class="mt-5">Nombre des produits () </h3>
+                <b-col cols="4" md="6" class="panier">
+                    <h3 class="mt-5">Vos produits :</h3>
 
                     <div class="produit-list pb-5" v-for="order in orders" v-bind:key="order.id">
 
@@ -87,11 +87,22 @@
         },
 
         methods:{
+            paniervide(){
+
+            },
             addition(){
-                return this.soustotal + this.livraison;
+                if(this.soustotal > 0){
+                    return this.soustotal + this.livraison;
+                }
             },
             soustotale(){
-                //return this.soustotal = this.orders[0].price + this.orders[1].price + this.orders[2].price + this.orders[3].price +  this.orders[3].price
+                //if(this.orders[0] > 0){
+                    //return this.soustotal = this.orders[0].price
+                //}
+
+
+
+
             },
             paniervide(){
 
@@ -143,6 +154,10 @@
         background-size: 380px;
         width: 70%;
 
+
+    }
+    .panier{
+        min-height: 400px;
     }
     .button-panier{
         background-color: #3C618C;

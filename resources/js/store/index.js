@@ -35,7 +35,6 @@ export default{
                 commit('SET_USER', user)
             })
         },
-
         logout({commit}){
             axios.post('/logout')
                 .then(res => {
@@ -112,10 +111,6 @@ export default{
 
                 })
         },
-
-
-
-
 
     },
     getters: {
