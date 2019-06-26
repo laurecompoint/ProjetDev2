@@ -120,6 +120,8 @@
         background-color: #3D628D;
         border-radius: 10px;
         border: none;
+        width: 130px;
+        height: 40px;
     }
     @media (max-width: $responsive-mobile) {
         .register{

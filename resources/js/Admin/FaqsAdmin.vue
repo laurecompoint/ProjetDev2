@@ -47,18 +47,19 @@
         },
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 faqs: []
             }
         },
         mounted () {
-               axios.get(`/faq-admim`)
+               axios.get(`${this.api}admim-faqs`)
                     .then(res => this.faqs = res.data)
                     .catch(err => console.log(err))
 
         },
         methods : {
             faqdelete(id) {
-                axios.post(`/faq-admim/${id}`)
+                axios.post(`${this.api}admim-faq/${id}`)
                     .then(res => {
                         window.location = '/admin-faqs'
 
@@ -75,7 +76,9 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    $responsive-tablet: 768px;
+    $responsive-mobile: 425px;
     table {
 
         width: 80%;
@@ -101,6 +104,15 @@
     button, button:hover{
         border: none;
         text-decoration: none;
+    }
+    @media (max-width: $responsive-mobile) {
+        table {
+            width: 100%;
+        }
+        .row{
+            margin-right: 0px;
+        }
+
     }
 
 </style>

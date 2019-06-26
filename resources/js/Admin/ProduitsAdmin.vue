@@ -52,14 +52,14 @@
             }
         },
         mounted () {
-            axios.get(`/produit-admin`)
+            axios.get(`${this.api}admin-produit`)
                 .then(res => this.produits = res.data)
                 .catch(err => console.log(err))
 
         },
         methods : {
             produitdelete(id) {
-                axios.post(`/produit-admin/${id}`)
+                axios.post(`${this.api}admin-produit/${id}`)
                     .then(res => {
                         window.location = '/admin-produit'
 
@@ -73,7 +73,9 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    $responsive-tablet: 768px;
+    $responsive-mobile: 425px;
     table {
 
         width: 80%;
@@ -96,4 +98,14 @@
         border: none;
         text-decoration: none;
     }
+    @media (max-width: $responsive-mobile) {
+        table {
+            width: 100%;
+        }
+        .row{
+            margin-right: 0px;
+        }
+
+    }
+
 </style>

@@ -34,6 +34,7 @@
         "es6-promise": "^4.2.8",
         "vue-carousel": "^0.18.0",
         "vue-scroll-stop": "^0.1.5",
+        "vue-stripe-elements-plus": "^0.2.10",
         "vuex": "^3.1.1"
     }
 }

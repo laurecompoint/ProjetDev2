@@ -1,41 +1,10 @@
 $responsive-tablet: 768px;
 $responsive-mobile: 425px;
 $blue : #6C8EAD;
+$black: black;
+$blue-dark : #3D628D;
+$blue2 :#3C618C;
 $white: white;
-
-#apptest{
-  font-family: 'Gravity';
-  .navbar-dark .navbar-toggler{
-    border: none;
-  }
-  button:focus{
-    outline: none;
-  }
-  #nav {
-    padding: 1% 5%;
-    background-color:  #6C8EAD;
-    .logo{
-      height: 70px;
-    }
-    a {
-      text-decoration: none;
-      color: white;
-      margin: 0 15px;
-      font-size: 12pt;
-      margin-top: 17px;
-
-
-    }
-  }
-
-  @media (max-width: $responsive-tablet) {
-    background-size: 800px;
-  }
-  @media (max-width: $responsive-mobile) {
-    background-size: 500px;
-  }
-}
-
 .link a{
   margin-left: 15px;
 }
@@ -53,7 +22,7 @@ $white: white;
 }
 .arrow-down{
   position: absolute;
-  top: 1700px;
+  top: 1705px;
   left: 88px;
   width: 45%;
 }
@@ -61,16 +30,11 @@ $white: white;
   font-family: "Monad";
   src: url('../../public/fonts/monad/Monad.otf');
 }
-
 h1,h5, h4, h2{
   font-family: 'Monad';
 }
 h1{
-  color: #3D628D;
-}
-.line{
-  background-color: #3D628D;
-  height: 15px;
+  color: $blue-dark;
 }
 %LosangeArrondie{
   -webkit-transform: rotate(45deg);
@@ -90,16 +54,16 @@ h1{
 }
 
 .produits-losange{
-  background-color: white;
+  background-color: $white;
   -webkit-transform: rotate(45deg);
   display: flex;
   justifie-content: center;
-  box-shadow: 8px 8px 12px #6C8EAD;
+  box-shadow: 8px 8px 12px $blue;
   @extend %LosangeArrondie
 }
 .goodies-losange{
   background: white;
-  box-shadow: 8px 8px 12px #6C8EAD;
+  box-shadow: 8px 8px 12px $blue;
   position: absolute;
   top: 150px;
   left:50px;
@@ -111,7 +75,7 @@ h1{
   padding-top: 40px
 }
 .text-compagny{
-  background-color: #6C8EAD;
+  background-color: $blue;
   margin-left: 185px;
 }
 .slide{
@@ -126,20 +90,22 @@ h1{
   justify-content: space-between;
 }
 H5{
-  color: black;
+  color: $black;
 }
 :hover link{
   text-decoration: none;
 }
 .color{
-  color: #3C618C;
+  color: $blue2;
 }
 .responsive-margin{
   margin-left: -67px
 }
 .imagetwo{
-  width: 400px;
+  width: 500px;
+  padding-left: 100px;
 }
+
 .imagethree{
   margin: auto;
 }
@@ -153,8 +119,25 @@ H5{
 .block{
   width: 400px;
 }
-$responsive-tablet: 768px;
-$responsive-mobile: 425px;
+//footer
+.footer{
+  background-color: $blue;
+  color: $white;
+}
+a, i, link, .iconsociaux{
+  color: $white;
+}
+.link{
+  color: white;
+}
+:hover .link {
+  color: white;
+  text-decoration: none;
+}
+.line{
+  background-color: $blue-dark;
+  height: 15px;
+}
 @media (max-width: $responsive-tablet) {
   .products{
     flex-direction: column;
@@ -189,10 +172,6 @@ $responsive-mobile: 425px;
 
 }
 @media (max-width: $responsive-mobile) {
-  .button, .margin{
-    margin-left: -80px;
-
-  }
   .responsive-margin{
     margin-left: 0px;
     width: 500px;
@@ -224,14 +203,14 @@ $responsive-mobile: 425px;
   .image{
     position: absolute;
     top: -120px;
-    LEFT: -315px;
+    LEFT: -295px;
     WIDTH: 251px;
   }
   .imagetwo{
     position: absolute;
-    top: -109px;
-    LEFT: -315px;
-    WIDTH: 251px;
+    top: -279px;
+    LEFT: -45px;
+    WIDTH: 235px;
   }
 
 }

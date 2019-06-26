@@ -9,13 +9,13 @@
         </div>
         <b-container class="bv-example-row">
             <b-row align-h="between">
-                <b-col cols="4" md="6" class="panier">
+                <b-col cols="10" md="6" class="panier">
                     <h3 class="mt-5">Vos produits :</h3>
 
                     <div class="produit-list pb-5" v-for="order in orders" v-bind:key="order.id">
 
                         <b-row align-h="between">
-                            <b-col cols="4" md="6" class="">
+                            <b-col cols="10" md="6" class="">
                                 <b-row no-gutters class="mt-5" align-v="center">
                                     <strong cols="5" >Nom :</strong>
                                     <p class="mt-3 ml-2"> {{order.name}}</p>
@@ -25,18 +25,13 @@
                                     <p class="mt-3 ml-2">1</p>
                                 </b-row>
                                 <b-row no-gutters align-v="center">
-                                    <strong cols="5" class="">Nombre de photo :</strong>
-                                    <p class="mt-3 ml-2">{{order.nombrephoto}}</p>
-                                </b-row>
-                                <b-row no-gutters align-v="center">
                                     <strong cols="5" class="">Prix :</strong>
                                     <p class="mt-3 ml-2" >{{order.price}}</p>
                                 </b-row>
-
                             </b-col>
-                            <b-col cols="4" md="6" class="">
+                            <b-col cols="1" md="6" class="">
                                 <form @submit.prevent="orderdelete(order.id)" method="POST">
-                                    <button class="btn mt-5 ml-5" type="submit"><font-awesome-icon icon="times" style="font-size:20px; color: #3C618C" /></button>
+                                    <button class="btn mt-5" type="submit"><font-awesome-icon icon="times" style="font-size:20px; color: #3C618C" /></button>
                                 </form>
                             </b-col>
                         </b-row>
@@ -46,24 +41,25 @@
                 <b-col cols="6" md="4" class="recap">
                     <h3 class="mt-5">Recap paiment</h3>
                     <div class="bg-white livraison">
-
                         <b-row align-h="between" class="mt-4 ml-2">
-                            <b-col cols="4" md="6" class=""><h6>Sous total :   </h6></b-col>
-                            <b-col cols="4" md="5"><h5>{{soustotale()}} €</h5></b-col>
+                            <b-col cols="6" md="6" class=""><h6>Sous total :   </h6></b-col>
+                            <b-col cols="6" md="5"><h5>{{soustotale()}} €</h5></b-col>
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
-                            <b-col cols="4" md="6" class=""><h6>L'ivraison :</h6></b-col>
-                            <b-col cols="4" md="5"><h5>5 €</h5></b-col>
+                            <b-col cols="6" md="6" class=""><h6>L'ivraison :</h6></b-col>
+                            <b-col cols="6" md="5"><h5>5 €</h5></b-col>
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
-                            <b-col cols="4" md="6" class=""><h6>Prix Total :</h6></b-col>
-                            <b-col cols="4" md="5"><h5 v-model="total">{{ addition()}}  €</h5></b-col>
+                            <b-col cols="6" md="6" class=""><h6>Prix Total :</h6></b-col>
+                            <b-col cols="6" md="5"><h5 v-model="total">{{ addition()}}  €</h5></b-col>
                         </b-row>
                         <b-button class="mb-5 mt-2 ml-4 button-panier">Valider le panier</b-button>
                     </div>
                 </b-col>
             </b-row>
         </b-container>
+
+
     </div>
 </template>
 
@@ -96,12 +92,8 @@
                 }
             },
             soustotale(){
-                //if(this.orders[0] > 0){
-                    //return this.soustotal = this.orders[0].price
-                //}
 
-
-
+                    return this.soustotal = this.orders[0].price
 
             },
             paniervide(){
@@ -122,8 +114,9 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    $responsive-tablet: 768px;
+    $responsive-mobile: 425px;
     .recap{
         position: fixed;
         top: 220px;
@@ -165,5 +158,22 @@
         height: 40px;
         border-radius: 10px;
         margin: auto;
+    }
+
+    @media (max-width: $responsive-tablet) {
+        .recap{
+            position: fixed;
+            top: 220px;
+            left: 500px;
+        }
+
+    }
+    @media (max-width: $responsive-mobile) {
+        .recap{
+            position: absolute;
+            top: 220px;
+            left: 220px;
+        }
+
     }
 </style>

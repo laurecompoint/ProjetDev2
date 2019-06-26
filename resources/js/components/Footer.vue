@@ -4,7 +4,7 @@
         <b-col sm="5" md="3" class="footerlink">
           <p >Nos produits :</p>
           <b-link to="/album" class="link">Album</b-link> <br>
-          <b-link to="/objets-personnalisés" class="link">Objets</b-link>
+          <b-link to="/goodies" class="link">Objets</b-link>
         </b-col>
         <b-col sm="5" md="3" class="text-center">
           <p class="text-footer">Besoin d'aide ?</p>
@@ -46,36 +46,11 @@ export default {
 <style  lang="scss">
   $responsive-tablet: 768px;
   $responsive-mobile: 425px;
-  .footer{
-    background-color: #6C8EAD;
-    color: white;
-  }
-    a, i, link, .iconsociaux{
-    color: white;
-    }
-  .button-login-register{
-    background-color: #3C618C;
-    border: none;
-    width: 130px;
-    height: 40px;
-    border-radius: 10px;
-  }
-  .link{
-    color: white;
-  }
-  :hover .link {
-    color: white;
-    text-decoration: none;
-  }
   .textright{
     text-align: right;
   }
   .icon{
     margin-left: 42px;
-  }
-  .line{
-    background-color: #3D628D;
-    height: 15px;
   }
   .test{
     margin-left: 10px;
@@ -89,7 +64,6 @@ export default {
   #us{
     text-align: right;
   }
-
   @media (max-width: $responsive-mobile) {
     .text-align{
       margin-left: 0px;

@@ -29,7 +29,7 @@
           <b-col cols="3" md="3" align-self="start">
             <div class="produits-losange-home">
               <div class="text-promotion text-center">
-                <h4 class="color">-30%</h4>
+                <h4 class="color">-30%</h4>z
                 <H4>SUR TOUS <br> LES PRODUITS</H4>
                 Avec le code  <p class="color">Promo&Perso</p>
               </div>
@@ -69,8 +69,8 @@
           <img src="img/cardrephoto.png" class="imagethree w-75 mt-3"/>
         </div>
         <div class="flex-column block text-center pt-5 background-image block-responsive" style="margin-right: 210px">
-          <b-link to="/memorie"><h5>Memorie</h5></b-link>
-          <img src="img/memory1.png" class="imagethree" STYLE="width: 70%"/>
+          <b-link to="/memorie"><h5>Cle usb</h5></b-link>
+          <img src="img/cleusb.png" class="imagethree pb-5" STYLE="width: 70%"/>
         </div>
       </div>
     </div>

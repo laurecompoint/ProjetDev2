@@ -43,18 +43,19 @@
         },
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 users: []
             }
         },
         mounted () {
-            axios.get(`/user-admin`)
+            axios.get(`${this.api}admin-user`)
                 .then(res => this.users = res.data)
                 .catch(err => console.log(err))
 
         },
         methods : {
             userdelete(id) {
-                axios.post(`/user-admin/${id}`)
+                axios.post(`${this.api}admin-user/${id}`)
                     .then(res => {
                         window.location = '/admin-user'})
                     .catch(err => {
@@ -65,9 +66,10 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+    $responsive-tablet: 768px;
+    $responsive-mobile: 425px;
     table {
-
         width: 80%;
         text-align: initial;
         margin-top: 150px;
@@ -86,5 +88,14 @@
     }
     button{
         border: none;
+    }
+    @media (max-width: $responsive-mobile) {
+        table {
+            width: 100%;
+        }
+        .row{
+            margin-right: 0px;
+        }
+
     }
 </style>

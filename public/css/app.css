@@ -1,44 +1,3 @@
-#apptest {
-  font-family: "Gravity";
-}
-
-#apptest .navbar-dark .navbar-toggler {
-  border: none;
-}
-
-#apptest button:focus {
-  outline: none;
-}
-
-#apptest #nav {
-  padding: 1% 5%;
-  background-color: #6C8EAD;
-}
-
-#apptest #nav .logo {
-  height: 70px;
-}
-
-#apptest #nav a {
-  text-decoration: none;
-  color: white;
-  margin: 0 15px;
-  font-size: 12pt;
-  margin-top: 17px;
-}
-
-@media (max-width: 768px) {
-  #apptest {
-    background-size: 800px;
-  }
-}
-
-@media (max-width: 425px) {
-  #apptest {
-    background-size: 500px;
-  }
-}
-
 .link a {
   margin-left: 15px;
 }
@@ -60,7 +19,7 @@
 
 .arrow-down {
   position: absolute;
-  top: 1700px;
+  top: 1705px;
   left: 88px;
   width: 45%;
 }
@@ -79,11 +38,6 @@ h2 {
 
 h1 {
   color: #3D628D;
-}
-
-.line {
-  background-color: #3D628D;
-  height: 15px;
 }
 
 .goodies-losange,
@@ -165,7 +119,8 @@ H5 {
 }
 
 .imagetwo {
-  width: 400px;
+  width: 500px;
+  padding-left: 100px;
 }
 
 .imagethree {
@@ -183,6 +138,32 @@ H5 {
 
 .block {
   width: 400px;
+}
+
+.footer {
+  background-color: #6C8EAD;
+  color: white;
+}
+
+a,
+i,
+link,
+.iconsociaux {
+  color: white;
+}
+
+.link {
+  color: white;
+}
+
+:hover .link {
+  color: white;
+  text-decoration: none;
+}
+
+.line {
+  background-color: #3D628D;
+  height: 15px;
 }
 
 @media (max-width: 768px) {
@@ -226,11 +207,6 @@ H5 {
 }
 
 @media (max-width: 425px) {
-  .button,
-  .margin {
-    margin-left: -80px;
-  }
-
   .responsive-margin {
     margin-left: 0px;
     width: 500px;
@@ -269,15 +245,15 @@ H5 {
   .image {
     position: absolute;
     top: -120px;
-    LEFT: -315px;
+    LEFT: -295px;
     WIDTH: 251px;
   }
 
   .imagetwo {
     position: absolute;
-    top: -109px;
-    LEFT: -315px;
-    WIDTH: 251px;
+    top: -279px;
+    LEFT: -45px;
+    WIDTH: 235px;
   }
 }
 

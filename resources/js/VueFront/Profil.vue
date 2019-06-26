@@ -63,9 +63,9 @@
             ]),
 
             profil() {
-                    axios.post(`${this.api}profile-modif`,  this.auth)
+                    axios.post(`profile-modif`,  this.auth)
                         .then(res => {
-                            this.$router.push('/admin-faqs')
+                            this.$router.push('/')
 
                         })
                         .catch(err => {

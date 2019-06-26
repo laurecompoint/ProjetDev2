@@ -36,6 +36,7 @@
         name: "FaqContact",
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 faqs: [],
                 contact: {
                     id: '',
@@ -49,7 +50,7 @@
             window.scrollTo(0,0);
         },
         mounted () {
-            axios.get(`faq`)
+            axios.get(`${this.api}faq-contact`)
                 .then(res => this.faqs = res.data)
                 .catch(err => console.log(err))
 

@@ -14,7 +14,9 @@
         name: "NavAdmin"
     }
 </script>
-<style scoped>
+<style scoped lang="scss">
+    $responsive-tablet: 768px;
+    $responsive-mobile: 425px;
     .nav-admin{
         background-color: #3C618C;
         margin-top: 40px;
@@ -38,6 +40,12 @@
     .text-promotion{
         margin-right: 50px;
         padding-top: 85px;
+    }
+    @media (max-width: $responsive-mobile) {
+        .admin-nav, .text-promotion{
+            margin-left: 0px;
+        }
+
     }
 
 </style>

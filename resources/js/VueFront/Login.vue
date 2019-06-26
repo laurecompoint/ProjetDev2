@@ -21,8 +21,9 @@
                 </small>
                 <b-form-input type="password"  placeholder="Mot de passe" v-model="auth.password"></b-form-input>
                 <div class="button-valider">
-                    <b-button type="submit" class="mt-4 button-login-register" >Valider</b-button>
+                    <b-button type="submit"  class="mt-4 button-login-register" >Valider</b-button>
                 </div>
+
             </form>
         </div>
 
@@ -45,12 +46,14 @@
             }
         },
         methods : {
+
             ...mapActions([
                 'login',
                 'setUser'
             ]),
             onLogin(){
                 this.login(this.auth)
+
 
             },
         }
@@ -73,9 +76,10 @@
         float: right;
         background-color: #3D628D;
         border-radius: 10px;
+        width: 130px;
+        height: 40px;
         border: none;
     }
-
     @media (max-width: $responsive-mobile) {
 
         .login{

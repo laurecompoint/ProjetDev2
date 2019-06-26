@@ -12,7 +12,8 @@ export default{
             axios.post('/login', payload)
                 .then(res =>{
                     dispatch('setUser')
-                    window.location = '/'
+                    return window.location = '/creation-mugs'
+
                 })
                 .catch(err =>{
                     this.errors = err.response.data.errors

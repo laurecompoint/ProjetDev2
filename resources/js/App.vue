@@ -36,7 +36,6 @@
         background-size: 1500px;
     }
 
-
     @font-face {
         font-family: "Monad";
         src: url('../../public/fonts/monad/Monad.otf');

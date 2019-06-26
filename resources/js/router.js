@@ -17,7 +17,6 @@ import CreationMugs from './VueFront/CreationMugs.vue'
 import CreationUsb from './VueFront/CreationUsb.vue'
 import CreationCadrePhoto from './VueFront/CreationCadrePhoto.vue'
 import CreationCalendrier from './VueFront/CreationCalendrier.vue'
-import CreationMemorie from './VueFront/CreationMemorie.vue'
 import CreationAlbum from './VueFront/CreationAlbum.vue'
 import HomeAdmin from './Admin/HomeAdmin.vue'
 import FaqsAdmin from './Admin/FaqsAdmin.vue'
@@ -50,7 +49,7 @@ const router = new VueRouter({
             component: Entreprise,
         },
         {
-            path: '/objets-personnalisés',
+            path: '/goodies',
             name: 'goodies',
             component: Goodies,
         },
@@ -59,11 +58,7 @@ const router = new VueRouter({
             name: 'produits2',
             component: Produits
         },
-        {
-            path: '/memorie',
-            name: 'produits4',
-            component: Produits
-        },
+
         {
             path: '/mugs',
             name: 'produits3',
@@ -139,11 +134,6 @@ const router = new VueRouter({
             path: '/creation-calendrier',
             name: 'creation calendrier',
             component: CreationCalendrier
-        },
-        {
-            path: '/creation-memorie',
-            name: 'creation memorie',
-            component: CreationMemorie
         },
         {
             path: '/creation-album',

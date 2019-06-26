@@ -16,6 +16,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         return back()->withInput();
+
     }
 
 }

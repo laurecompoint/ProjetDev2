@@ -5,9 +5,9 @@
         <div class="line mt-4"></div>
         <b-row align-h="between" class="mt-3 pb-5">
             <form  @submit.prevent="usernew">
-                <div class="info" cols="6">
+                <div class="info" cols="12" md="6">
                 <b-row align-h="center"  class="mt-5">
-                    <b-col cols="6">
+                    <b-col cols="12" md="6">
                         <label  class="mt-3">Nom</label>
                         <small v-if="errors.lastname">
                             <p class="text-danger" v-for="Error in errors.lastname">
@@ -17,7 +17,7 @@
                         <b-form-input type="text" placeholder="Nom"  v-model="users.lastname"></b-form-input>
 
                     </b-col>
-                    <b-col cols="6">
+                    <b-col cols="12" md="6">
                         <label class="mt-3">Prénom</label>
                         <small v-if="errors.firstname">
                             <p class="text-danger" v-for="Error in errors.firstname">
@@ -35,7 +35,8 @@
                         {{ Error }}
                     </p>
                 </small>
-                <b-form-input type="email" placeholder="Email" v-model="users.email"></b-form-input>
+
+                    <b-form-input cols="12" type="email" placeholder="Email" v-model="users.email"></b-form-input>
                     <label  class="mt-3">Admin</label>
                     <select v-model="users.admin"  class="custom-select">
                         <option value="1">Admin</option>
@@ -64,7 +65,7 @@
                 <b-form-input type="password"  placeholder="Mot de passe" v-model="users.password"></b-form-input>
 
                 <div class="button-valider">
-                    <b-button type="submit"  class="mt-4 button-login-register">Valider</b-button>
+                    <button type="submit"  class="mt-4 button-login-register">Valider</button>
                 </div>
                 </div>
             </form>
@@ -117,22 +118,42 @@
     .info{
         padding-left: 105px;
     }
-    .button-compte{
-        background-color: #6C8EAD;
+    .button-login-register{
+        background-color: #3D628D;
         border-radius: 10px;
         border: none;
+        width: 130px;
+        height: 40px;
+        color: white;
     }
-    .form-control{
+    .form-control, .custom-select{
         width: 100%;
         border-radius: 0px;
         border: Solid #6C8EAD 3px;
     }
+    @media (max-width: $responsive-tablet) {
+
+        .row{
+            margin-right: 0px;
+        }
+        .custom-select{
+            width: 100%;
+        }
+        .block-image{
+            display: none;
+        }
+    }
     @media (max-width: $responsive-mobile) {
         .form-control{
-            width: 150%;
+            width: 90%;
+        }
+        .custom-select{
+            width: 90%;
+            border-radius: 0px;
+            border: Solid #6C8EAD 3px;
         }
         .info{
-            padding-left: 70px;
+            padding-left: 40px;
         }
         .block-image{
             display: none;
@@ -141,12 +162,5 @@
             margin-right: 0px;
         }
     }
-    @media (max-width: $responsive-tablet) {
-        .form-control{
-            width: 140%;
-        }
-        .row{
-            margin-right: 0px;
-        }
-    }
+
 </style>

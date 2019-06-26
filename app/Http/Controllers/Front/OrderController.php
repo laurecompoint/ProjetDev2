@@ -36,7 +36,16 @@ class OrderController extends Controller
 
         return  Order::all()->where('users_id', '==',  Auth::user()->id);
 
+
     }
+    public function paniersomme(Request $request,Order $order)
+    {
+
+       $order = Order::all()->where('users_id', '==',  Auth::user()->id);
+
+
+    }
+
     public function destroy(Request $request, Order $order)
     {
         $order = Order::find($order->id = $request->id);

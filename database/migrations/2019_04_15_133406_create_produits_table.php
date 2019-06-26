@@ -19,7 +19,11 @@ class CreateProduitsTable extends Migration
             $table->integer('price');
             $table->string('image');
             $table->string('content');
-            $table->string('delivery');
+            $table->string('goodies');
+            $table->string('description');
+            $table->string('fabrication');
+            $table->string('link');
+            $table->string('linkcreation');
             $table->timestamps();
         });
     }

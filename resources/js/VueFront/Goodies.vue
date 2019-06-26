@@ -32,12 +32,12 @@
         },
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 goodies: [],
-
             }
         },
         mounted () {
-            axios.get(`/goodies`)
+            axios.get(`${this.api}goodies`)
                 .then(res => this.goodies = res.data)
                 .catch(err => console.log(err))
 
@@ -103,15 +103,16 @@
         color: white;
         text-decoration: none;
     }
-    @media (max-width: $responsive-mobile) {
-        .add{
-            min-height: 2500px;
-        }
 
-    }
     @media (max-width: $responsive-tablet) {
         .add{
             min-height: 1600px;
+        }
+
+    }
+    @media (max-width: $responsive-mobile) {
+        .add{
+            min-height: 2500px;
         }
 
     }

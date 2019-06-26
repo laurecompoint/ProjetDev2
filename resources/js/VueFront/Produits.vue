@@ -48,6 +48,7 @@
         name: "Produits",
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 produit: [],
                 url: window.location.href,
                 album: 'http://127.0.0.1:8000/album',
@@ -63,13 +64,12 @@
         },
         mounted () {
             if ( this.url === this.album) { var id = 1 }
-            if ( this.url === this.calendrier) { var id = 2 }
+            if ( this.url === this.calendrier) { var id = 7}
             if ( this.url === this.mugs) { var id = 3 }
-            if ( this.url === this.memorie) { var id = 4 }
             if ( this.url === this.cadrephoto) { var id = 5 }
             if ( this.url === this.usb) { var id = 6 }
 
-            axios.get(`goodies/${id}`)
+            axios.get(`${this.api}goodies/${id}`)
                 .then(res => this.produit = res.data)
                 .catch(err => console.log(err))
 
