@@ -106,13 +106,13 @@
 
     @media (max-width: $responsive-tablet) {
         .add{
-            min-height: 1600px;
+            min-height: 1200px;
         }
 
     }
     @media (max-width: $responsive-mobile) {
         .add{
-            min-height: 2500px;
+            min-height: 2100px;
         }
 
     }

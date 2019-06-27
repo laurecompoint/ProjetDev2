@@ -38,14 +38,19 @@ class AdminFaqController extends Controller
         $faq = Faq::find($faq->id = $request->id);
         $faq->delete();
     }
-    public function edit($id)
-    {
-        return Faq::findOrFail($id);
-    }
-
-    public function udapte(Request $request, Faq $faq)
+    public function edit(Request $request, Faq $faq)
     {
         $faq = Faq::find($faq->id = $request->id);
-        return $faq->where('id', $faq->id)->first();
+        $faqs = $faq->where('id', $faq->id)->first();
+        return view('/AdminModif.faqmodif')->with([
+            'faqs' => $faqs,
+        ]);
+    }
+
+    public function update(Request $request, Faq $faq)
+    {
+        $faqs = $faq->where('id', $faq->id = $request->id)->update([  'name'  =>  $faq->name = $request->name, 'question'  =>  $faq->question = $request->question, 'answer'  =>  $faq->answer = $request->answer, 'created_at' => NOW()]);
+
+        return redirect('/admin-faqs');
     }
 }

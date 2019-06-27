@@ -80,6 +80,7 @@
         name: "UsersNews",
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 users:{
                     lastname: '',
                     firstname: '',
@@ -95,7 +96,7 @@
         },
         methods : {
             usernew() {
-                axios.post(`/new-users`,  this.users)
+                axios.post(`${this.api}users-new`, this.users)
                     .then(res => {
                         this.$router.push('/admin-user')
 

@@ -51,6 +51,7 @@ export default {
   }
   .icon{
     margin-left: 42px;
+    text-align: center;
   }
   .test{
     margin-left: 10px;

@@ -35,6 +35,20 @@ class AdminUserController extends Controller
         ]);
 
     }
+    public function edit(Request $request, User $user)
+    {
+        $user = User::find($user->id = $request->id);
+        $users = $user->where('id', $user->id)->first();
+        return view('/AdminModif.usermodif')->with([
+            'users' => $users,
+        ]);
+    }
+    public function update(Request $request, User $user)
+    {
+        $users = $user->where('id', $user->id = $request->id)->update([  'lastname'  =>  $user->lastname = $request->lastname, 'firstname'  =>  $user->firstname = $request->firstname, 'email'  =>  $user->email = $request->email, 'adresse'  =>  $user->adresse = $request->adresse, 'password'  =>  $user->password = Hash::make($request['password']), 'tel'  =>  $user->tel = $request->tel, 'admin'  =>  $user->admin = $request->admin, 'created_at' => NOW()]);
+
+        return redirect('/admin-user');
+    }
     public function destroy(Request $request, User $user)
     {
         $user = User::find($user->id = $request->id);

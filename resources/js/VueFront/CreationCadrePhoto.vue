@@ -167,13 +167,16 @@
         padding-bottom: 30px;
 
     }
-    @media (max-width: $responsive-mobile) {
 
-    }
     @media (max-width: $responsive-tablet) {
         .customize-choice{
             top: 90px;
             left: 50px;
+        }
+        .image-preview{
+            margin-top: 55px;
+            margin-left: 43px;
+
         }
         .inputtext input{
             width: 100px;
@@ -182,10 +185,36 @@
             background-size: 400px;
         }
         img.preview {
-            width: 315px;
+            width: 215px;
 
+        }
+        .customizesblock{
+            background-size: 300px;
+        }
+        .textgoodies{
+            top: 150px;
+        }
+
+
+    }
+    @media (max-width: $responsive-mobile) {
+        .customize-choice{
+            top: 90px;
+            left: 100px
+        }
+        .customizesblock{
+            margin-left: 50px;
+        }
+        img.preview {
+            width: 150px;
+        }
+
+        p{
+            margin-left: -30px;
+        }
+        .textgoodies{
+            left: 150px;
         }
 
     }
-
 </style>

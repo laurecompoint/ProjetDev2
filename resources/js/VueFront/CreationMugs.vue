@@ -10,8 +10,8 @@
                     <h6 class="">Choisir une photo</h6>
                     <div class="w-75 m-auto">
                                 <label class="inputfile">
-                                        <input type="file" v-on="test" @change="previewImage" accept="image/*">
-                                        <font-awesome-icon icon="images" style="font-size:40px; color: #3C618C; cursor: pointer" />
+                                        <input type="file" name="avatar"  @change="previewImage" accept="image/*">
+                                        <font-awesome-icon  icon="images" style="font-size:40px; color: #3C618C; cursor: pointer" />
                                 </label>
                                 <div class="w-75 m-auto inputtext">
 
@@ -24,7 +24,7 @@
             </b-col>
             <b-col cols="12" md="9" class="customizes">
                 <div class="customizesblock">
-                    <div class="image-preview" v-if="orders.image.length > 0">
+                    <div class="image-preview" >
                         <img class="preview"  :src="orders.image">
                     </div>
                     <p class="text-center mt-4">{{ orders.text }} </p>
@@ -52,7 +52,6 @@
         data() {
 
             return {
-                test: "",
                 orders:{
                     image: "",
                     name: "Mugs",
@@ -70,6 +69,12 @@
 
         },
         methods: {
+            onFileChange(e) {
+                var files = e.target.files || e.dataTransfer.files;
+                if (!files.length)
+                    return;
+                this.createImage(files[0]);
+            },
             ...mapActions([
                 'order'
             ]),
@@ -83,6 +88,7 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             },
+
             Onorder(){
                 this.order(this.orders)
             },
@@ -157,22 +163,17 @@
         padding-bottom: 30px;
 
     }
-    @media (max-width: $responsive-mobile) {
 
-        .picture-mugs{
-            width:85%
-        }
-        .border-customizes{
-            justify-content: right;
-        }
-        p{
-            margin-left: -30px;
-        }
-    }
     @media (max-width: $responsive-tablet) {
+        .customizes{
+            background-size: 300px;
+        }
         .customize-choice{
             top: 90px;
             left: 50px;
+        }
+        img.preview {
+            width: 150px;
         }
         input{
             width: 120px;
@@ -181,6 +182,18 @@
             background-size: 400px;
         }
 
+    }
+    @media (max-width: $responsive-mobile) {
+        .customizesblock{
+            margin-left: 50px;
+        }
+        img.preview {
+            width: 150px;
+        }
+
+        p{
+            margin-left: -30px;
+        }
     }
 
 </style>

@@ -4,13 +4,14 @@
         <div class="line mt-4"></div>
 
         <h3 class="contact mt-5">FAQ</h3>
-    <div class="" v-for="faq in faqs" v-bind:key="faq.id">
-    <div class="contact text-justify" cols="5">
-        <h6 class="mt-5">Catégorie : {{ faq.name }}</h6>
-        <p class="mt-4 w-75"><strong>Question : </strong>  {{ faq.question }}</p>
-        <p CLASS="w-50"><strong>Réponse : </strong>  {{ faq.answer }}</p>
-    </div>
-    </div>
+
+            <div class="" v-for="faq in faqs" v-bind:key="faq.id">
+            <div class="contact text-justify" cols="5">
+                <h6 class="mt-5">Catégorie : {{ faq.name }}</h6>
+                <p class="mt-4 w-75"><strong>Question : </strong>  {{ faq.question }}</p>
+                <p CLASS="w-50"><strong>Réponse : </strong>  {{ faq.answer }}</p>
+            </div>
+            </div>
 
         <div>
             <b-row align-v="start" class="pb-3 responsive-margin">

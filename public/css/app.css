@@ -1,3 +1,9 @@
+input {
+  width: 350%;
+  border-radius: 0px;
+  border: Solid #6C8EAD 3px;
+}
+
 .link a {
   margin-left: 15px;
 }

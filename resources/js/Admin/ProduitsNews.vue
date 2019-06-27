@@ -58,11 +58,11 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
     export default {
         name: "FaqsNews",
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 produits:{
                     name: '',
                     image: '',
@@ -75,11 +75,16 @@
             }
         },
         methods : {
-            ...mapActions([
-                'productnew'
-            ]),
             Onproductnew() {
-                this.productnew(this.produits)
+                axios.post(`${this.api}produits-new`, this.produits)
+                    .then(res => {
+                        this.$router.push('/admin-produit')
+
+                    })
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+
+                    })
             },
 
         }

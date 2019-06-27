@@ -6,31 +6,11 @@
             <div class="info" cols="6">
                 <form method="post" action="" @submit.prevent="profil">
                     <h3 class="mt-5">Information</h3> <br>
-                    <div class="form-group">
-                        <label>Nom</label>
-                        <input type="text" class="form-control"  v-model="auth.lastname" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label>Prénom</label>
-                        <input type="text" class="form-control" v-model="auth.firstname" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" v-model="auth.email"  placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label>Adresse</label>
-                        <input type="text" class="form-control" v-model="auth.adresse"  placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label>Numéro de téléphone</label>
-                        <input type="text" class="form-control" v-model="auth.tel"  placeholder="">
-                    </div>
 
-                    <button class="mt-3 mb-5 button-compte" type="submit">Modifier</button>
+
                 </form>
             </div>
-            <b-col cols="4" class="block-image"> <p CLASS="text-center mt-5"><font-awesome-icon icon="user" style="font-size:200px; color: #3C618C" /></p></b-col>
+            <b-col cols="4" class="block-image"> </b-col>
         </b-row>
     </div>
 </template>

@@ -19,7 +19,7 @@
                         <td>
                             <b-button-group>
 
-                                <button ><font-awesome-icon class="mr-3" icon="pencil-alt" style="font-size:20px; color: #3C618C; cursor: pointer" /></button>
+                                <a v-bind:href="faq.id"><font-awesome-icon class="mr-3" icon="pencil-alt" style="font-size:20px; color: #3C618C; cursor: pointer" /></a v-bind:hr>
                                 <form @submit.prevent="faqdelete(faq.id)" method="POST">
                                 <button class="btn btn-outline-danger"  type="submit">  <font-awesome-icon icon="trash" style="font-size:20px; color: #3d628d; cursor: pointer" /></button>
                                 </form>

@@ -21,6 +21,8 @@ import CreationAlbum from './VueFront/CreationAlbum.vue'
 import HomeAdmin from './Admin/HomeAdmin.vue'
 import FaqsAdmin from './Admin/FaqsAdmin.vue'
 import FaqsModif from './Admin/FaqsModif.vue'
+import UsersModif from './Admin/UsersModif.vue'
+import ProduitsModif from './Admin/ProduitsModif.vue'
 import FaqsNew from './Admin/FaqsNews.vue'
 import ProduitsAdmin from './Admin/ProduitsAdmin.vue'
 import ProduitsNew from './Admin/ProduitsNews.vue'
@@ -106,7 +108,7 @@ const router = new VueRouter({
 
         },
         {
-            path: '/profile-modif',
+            path: '/profile',
             name: 'profile-modif',
             component: Profile,
         },
@@ -152,9 +154,44 @@ const router = new VueRouter({
             component:  FaqsAdmin
         },
         {
-            path: '/faqs-modif/1',
-            name: 'faqs modif',
+            path: '/faqmodif1',
+            name: 'faqs modif 1',
             component:  FaqsModif
+        },
+        {
+            path: '/faqmodif2',
+            name: 'faqs modif 2',
+            component:  FaqsModif
+        },
+        {
+            path: '/usermodif1',
+            name: 'user modif 1',
+            component:  UsersModif
+        },
+        {
+            path: '/usermodif2',
+            name: 'user modif 2',
+            component:  UsersModif
+        },
+        {
+            path: '/produitmodif1',
+            name: 'produit modif 1',
+            component:  ProduitsModif
+        },
+        {
+            path: '/produitmodif3',
+            name: 'produit modif 3',
+            component:  ProduitsModif
+        },
+        {
+            path: '/produitmodif6',
+            name: 'produit modif 6',
+            component:  ProduitsModif
+        },
+        {
+            path: '/produitmodif7',
+            name: 'produit modif 7',
+            component:  ProduitsModif
         },
         {
             path: '/faqs-new',

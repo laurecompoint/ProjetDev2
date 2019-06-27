@@ -10,7 +10,7 @@
                 <p><strong>Adresse :  </strong>{{user().adresse}} </p>
                 <p><strong>Mail : </strong> {{user().email}}</p>
                 <p><strong>Numéro de téléphone : </strong>{{user().tel}} </p>
-                <router-link  class="btn button-compte" to="/profile-modif">Modifier vos info</router-link>
+                <a href="profile"  class="btn button-compte">Modifier vos info</a>
             </div>
             <b-col cols="4" class="user"> <p CLASS="text-center mt-5"><font-awesome-icon icon="user" style="font-size:200px; color: #3C618C" /></p></b-col>
         </b-row>
@@ -58,6 +58,7 @@
 
             }
         },
+
         methods : {
             ...mapActions([
                 'logout',

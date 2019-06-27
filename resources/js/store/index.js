@@ -8,27 +8,6 @@ export default{
         },
     },
     actions:{
-        login({commit, dispatch}, payload){
-            axios.post('/login', payload)
-                .then(res =>{
-                    dispatch('setUser')
-                    return window.location = '/creation-mugs'
-
-                })
-                .catch(err =>{
-                    this.errors = err.response.data.errors
-                })
-        },
-        register({commit, dispatch}, payload){
-            axios.post('/register', payload)
-                .then(res =>{
-                    dispatch('setUser')
-                    window.location = '/'
-                })
-                .catch(err =>{
-                    this.errors = err.response.data.errors
-                })
-        },
         setUser({commit}){
             axios.get('/getUser').then((res) => {
                 let user = res.data
@@ -88,40 +67,12 @@ export default{
                     this.errors = err.response.data.errors
                 })
         },
-        faqsnew({commit, dispatch}, payload) {
-            axios.post(`/new-faqs`, payload)
-                .then(res => {
-                    //this.router.push('/admin-faqs')
-                    window.location = 'admin-faqs'
 
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-
-                })
-        },
-        productnew({commit, dispatch}, payload) {
-            axios.post(`/new-produits`,  payload)
-                .then(res => {
-                    window.location = 'admin-produit'
-                    //this.$router.push('/admin-produits')
-
-                })
-                .catch(err => {
-                    this.errors = err.response.data.errors
-
-                })
-        },
 
     },
     getters: {
         user(state){
             return state.user
         },
-
-
-
     },
-
-
 }

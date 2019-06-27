@@ -9,3 +9,6 @@ Route::middleware('api')->get('/admin-user', 'Admin\AdminUserController@index');
 Route::middleware('api')->post('/admin-produit/{id}', 'Admin\AdminProduitController@destroy');
 Route::middleware('api')->post('/admim-faq/{id}', 'Admin\AdminFaqController@destroy');
 Route::middleware('api')->post('/admin-user/{id}', 'Admin\AdminUserController@destroy');
+Route::middleware('api')->post('/faqs-new', 'Admin\AdminFaqController@create');
+Route::middleware('api')->post('/produits-new', 'Admin\AdminProduitController@create_admin');
+Route::middleware('api')->post('/users-new', 'Admin\AdminUserController@create');

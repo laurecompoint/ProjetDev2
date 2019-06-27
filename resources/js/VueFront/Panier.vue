@@ -5,7 +5,6 @@
         <div class="" v-if="paniervide()">
             <h3 class="mt-5 text-center">Votre panier est vide</h3>
             <p class="pb-5 mt-5 text-center"><font-awesome-icon icon="shopping-basket"  style="font-size:200px; color: #6C8EAD;" /></p>
-
         </div>
         <b-container class="bv-example-row">
             <b-row align-h="between">

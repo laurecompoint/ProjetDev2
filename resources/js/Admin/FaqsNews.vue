@@ -1,11 +1,10 @@
 <template>
     <div class="background text-justify">
-
         <h1 class="text-center mt-4">Ajouter Faq</h1>
         <div class="line mt-4"></div>
         <b-row align-h="between" class="mt-3 pb-5">
-            <form  @submit.prevent="Onfaqsnew">
-            <div class="info" cols="6">
+            <form  @submit.prevent="Faqsnew">
+            <div class="info" cols="8">
                 <label  class="mt-5 email">Catégorie</label>
                 <small v-if="errors.name">
                     <p class="text-danger" v-for="Error in errors.name">
@@ -37,11 +36,11 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
     export default {
         name: "FaqsNews",
         data() {
             return {
+                api: process.env.MIX_API_LOCAL,
                 faqs:{
                     name: '',
                     question: '',
@@ -53,11 +52,17 @@
             }
         },
         methods : {
-            ...mapActions([
-                'faqsnew'
-            ]),
-            Onfaqsnew() {
-                this.faqsnew(this.faqs)
+
+            Faqsnew() {
+                axios.post(`${this.api}faqs-new`, this.faqs)
+                    .then(res => {
+                        this.$router.push('/admin-faqs')
+
+                    })
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+
+                    })
             },
 
         }

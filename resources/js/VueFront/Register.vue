@@ -69,7 +69,7 @@
 </div>
 </template>
 <script>
-    import {mapActions} from 'vuex'
+
     export default {
         name: "Register",
         data() {
@@ -89,12 +89,17 @@
             }
         },
         methods : {
-            ...mapActions([
-                'register',
-                'setUser'
-            ]),
+
             Onregister() {
-                this.register(this.auth)
+                //this.register(this.auth)
+                axios.post('/register', this.auth)
+                    .then(res =>{
+                       window.location = '/'
+
+                    })
+                    .catch(err =>{
+                        this.errors = err.response.data.errors
+                    })
             },
 
             confirmpassword () {

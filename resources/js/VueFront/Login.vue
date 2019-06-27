@@ -30,7 +30,7 @@
     </div>
 </template>
 <script>
-    import {mapActions} from 'vuex'
+
     export default {
         name: "Login",
         data() {
@@ -46,14 +46,14 @@
             }
         },
         methods : {
-
-            ...mapActions([
-                'login',
-                'setUser'
-            ]),
             onLogin(){
-                this.login(this.auth)
-
+                axios.post('/login', this.auth)
+                    .then(res => {
+                        window.location = '/'
+                    })
+                    .catch(err => {
+                        this.errors = err.response.data.errors
+                    })
 
             },
         }
