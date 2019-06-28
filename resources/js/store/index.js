@@ -25,7 +25,7 @@ export default{
                 })
             commit('SET_USER', null)
         },
-        order({commit, dispatch}, payload){
+        orderMugs({commit, dispatch}, payload){
             axios.post(`/creation-mugs`,  payload)
                 .then(res => {
                     //this.$router.push('/panier')

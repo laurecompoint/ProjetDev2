@@ -28,16 +28,7 @@ class OrderController extends Controller
         $order->users_id =  Auth::user()->id;
         $order->image =  $request->image;
         $order->nombrephoto =  $request->nombrephoto;
-       $order ->save();
-        /*if($request->hasFile('avatar')){
-            $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save( public_path('/images/' . $filename ) );
-            $user = Auth::user();
-            $user->avatar = $filename;
-            $user->save();
-        }
-        */
+        $order ->save();
 
     }
     public function panieruser()

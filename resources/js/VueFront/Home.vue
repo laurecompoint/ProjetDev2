@@ -15,7 +15,7 @@
             </div>
           </b-col>
           <b-col cols="3" md="3" align-self="end" class="text-center">
-            <b-button class="button" to="/objets-personnalisés" >J'en profite</b-button>
+            <b-button class="button" to="/goodies" >J'en profite</b-button>
           </b-col>
           <b-col cols="3" md="3" align-self="start" class="mb-5">
             <img src="img/goodies.png" class="imagetwo"/>
@@ -69,7 +69,7 @@
           <img src="img/cardrephoto.png" class="imagethree w-75 mt-3"/>
         </div>
         <div class="flex-column block text-center pt-5 background-image block-responsive" style="margin-right: 210px">
-          <b-link to="/memorie"><h5>Cle usb</h5></b-link>
+          <b-link to="/cle-usb"><h5>Cle usb</h5></b-link>
           <img src="img/cleusb.png" class="imagethree pb-5" STYLE="width: 70%"/>
         </div>
       </div>

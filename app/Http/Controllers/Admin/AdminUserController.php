@@ -13,6 +13,7 @@ class AdminUserController extends Controller
         return User::all();
 
     }
+
     protected function create(Request $request)
     {
 

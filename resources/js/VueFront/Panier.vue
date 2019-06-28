@@ -25,7 +25,7 @@
                                 </b-row>
                                 <b-row no-gutters align-v="center">
                                     <strong cols="5" class="">Prix :</strong>
-                                    <p class="mt-3 ml-2" >{{order.price}}</p>
+                                    <p class="mt-3 ml-2" >{{order.price}}€</p>
                                 </b-row>
                             </b-col>
                             <b-col cols="1" md="6" class="">
@@ -92,7 +92,8 @@
             },
             soustotale(){
 
-                    return this.soustotal = this.orders[0].price
+                    var price = this.orders[0].price
+                    return this.soustotal = price
 
             },
             paniervide(){

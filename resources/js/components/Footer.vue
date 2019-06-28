@@ -51,7 +51,6 @@ export default {
   }
   .icon{
     margin-left: 42px;
-    text-align: center;
   }
   .test{
     margin-left: 10px;
@@ -81,6 +80,9 @@ export default {
     }
     .text-footer{
       margin-top: 10px;
+    }
+    .icon{
+      text-align: center;
     }
   }
   @media (max-width: $responsive-tablet) {

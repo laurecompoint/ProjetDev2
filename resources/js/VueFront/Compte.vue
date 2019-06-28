@@ -14,7 +14,7 @@
             </div>
             <b-col cols="4" class="user"> <p CLASS="text-center mt-5"><font-awesome-icon icon="user" style="font-size:200px; color: #3C618C" /></p></b-col>
         </b-row>
-        <b-row align-v="start" class="pb-3 responsive-margin mt-5">
+        <b-row align-v="start" class="pb-3 mt-5">
             <h3 v-b-toggle.collapse-1 class="mt-5 info">Historique de commande</h3>
             <font-awesome-icon v-b-toggle.collapse-1 icon="angle-down" class="icon mt-5 ml-3" style="font-size:40px; color: #3C618C" />
         </b-row>
@@ -26,7 +26,7 @@
             </b-row>
         </b-collapse>
 
-        <b-row align-v="start" class="responsive-margin">
+        <b-row align-v="start" class="">
             <h3 v-b-toggle.collapse-2 class="mt-5 info">Avantage cadeaux</h3>
             <font-awesome-icon v-b-toggle.accordion-3 icon="angle-down" class="icon mt-5 ml-3" style="font-size:40px; color: #3C618C" />
         </b-row>

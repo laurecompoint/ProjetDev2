@@ -69,14 +69,8 @@
 
         },
         methods: {
-            onFileChange(e) {
-                var files = e.target.files || e.dataTransfer.files;
-                if (!files.length)
-                    return;
-                this.createImage(files[0]);
-            },
             ...mapActions([
-                'order'
+                'orderMugs'
             ]),
             previewImage: function(event) {
                 var input = event.target;
@@ -90,7 +84,7 @@
             },
 
             Onorder(){
-                this.order(this.orders)
+                this.orderMugs(this.orders)
             },
 
 

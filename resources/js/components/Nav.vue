@@ -15,6 +15,7 @@
                     <b-dropdown size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
                         <template slot="button-content"><font-awesome-icon icon="user" style="font-size:30px; color: white" /></template>
                         <router-link class="text-dark"  to="/compte"><h6 class="text-center">Mon Espace : {{user().firstname}}</h6> </router-link>
+                        <img v-bind:src="user().avatar" class="w-25 ml-5" />
                         <div class="text-center">
                             <a class="buttonlogout"  @click="Onlogout()">Deconexion</a>
                         </div>

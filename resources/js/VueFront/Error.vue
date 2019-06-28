@@ -1,7 +1,7 @@
 <template>
     <div class="error">
         <div class="pt-5" align-h="center" >
-            <img src="../../../public/img/404.png" class="picture mx-auto d-block"/>
+            <img src="img/404.png" class="picture mx-auto d-block"/>
 
         </div>
     </div>

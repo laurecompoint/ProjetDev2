@@ -5,7 +5,7 @@
             <div class="line mt-4"></div>
             <div class="error">
                 <b-row class="pt-5" align-h="center" >
-                    <img src="../../../public/img/goodiespasdisponible.png" class="picture"/>
+                    <img src="img/goodiespasdisponible.png" class="picture"/>
 
                 </b-row>
             </div>
