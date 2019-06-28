@@ -11,9 +11,14 @@ use Illuminate\Http\Request;
 class AdminFaqController extends Controller
 {
 
+
     public function index()
     {
             return Faq::all();
+    }
+    public function nb()
+    {
+        return Faq::all()->count();
     }
     public function create(Faq $faq, Request $request)
     {

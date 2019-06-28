@@ -28,7 +28,6 @@ import ProduitsAdmin from './Admin/ProduitsAdmin.vue'
 import ProduitsNew from './Admin/ProduitsNews.vue'
 import UserAdmin from './Admin/UserAdmin.vue'
 import UserNew from './Admin/UsersNews.vue'
-import OrderAdmin from './Admin/OrderAdmin.vue'
 import Error from './VueFront/Error.vue'
 
 const router = new VueRouter({
@@ -217,11 +216,6 @@ const router = new VueRouter({
             path: '/users-new',
             name: 'new user',
             component:  UserNew
-        },
-        {
-            path: '/admin-order',
-            name: 'admin order',
-            component:  OrderAdmin
         },
         {
             path:"*",

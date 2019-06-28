@@ -5,7 +5,7 @@
                 <NavAdmin></NavAdmin>
             </b-col>
             <b-col cols="9" md="9" class="text-center">
-                <h1 class="text-center mt-4">Administration : Produits <router-link to="/produits-new"><font-awesome-icon icon="plus-circle" style="font-size:40px; color: #3C618C; cursor: pointer" /></router-link></h1>
+                <h1 class="text-center mt-4">Administration : Produits ({{ nb }}) <router-link to="/produits-new"><font-awesome-icon icon="plus-circle" style="font-size:40px; color: #3C618C; cursor: pointer" /></router-link></h1>
                 <table>
                     <tr class="headtable">
                         <th class="text-white">Id</th>
@@ -45,15 +45,16 @@
         data() {
             return {
                 api: process.env.MIX_API_LOCAL,
-                produits: [
-
-
-                ]
+                produits: [],
+                nb: []
             }
         },
         mounted () {
             axios.get(`${this.api}admin-produit`)
                 .then(res => this.produits = res.data)
+                .catch(err => console.log(err))
+            axios.get(`${this.api}admin-produits`)
+                .then(res => this.nb = res.data)
                 .catch(err => console.log(err))
 
         },

@@ -12,3 +12,6 @@ Route::middleware('api')->post('/admin-user/{id}', 'Admin\AdminUserController@de
 Route::middleware('api')->post('/faqs-new', 'Admin\AdminFaqController@create');
 Route::middleware('api')->post('/produits-new', 'Admin\AdminProduitController@create_admin');
 Route::middleware('api')->post('/users-new', 'Admin\AdminUserController@create');
+Route::middleware('api')->get('/admim-faq', 'Admin\AdminFaqController@nb');
+Route::middleware('api')->get('/admin-users', 'Admin\AdminUserController@nb');
+Route::middleware('api')->get('/admin-produits', 'Admin\AdminProduitController@nb');

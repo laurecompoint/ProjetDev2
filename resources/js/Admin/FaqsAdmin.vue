@@ -6,7 +6,7 @@
                 <NavAdmin></NavAdmin>
             </b-col>
             <b-col cols="9" md="9" class="text-center">
-                <router-link to="/administration"><h1 class="text-center mt-4">Administration : Fags <router-link to="/faqs-new"><font-awesome-icon icon="plus-circle" style="font-size:40px; color: #3C618C; cursor: pointer" /></router-link></h1></router-link>
+                <router-link to="/administration"><h1 class="text-center mt-4">Administration : Fags ({{ nb }}) <router-link to="/faqs-new"><font-awesome-icon icon="plus-circle" style="font-size:40px; color: #3C618C; cursor: pointer" /></router-link></h1></router-link>
                 <table>
                     <tr class="headtable">
                         <th class="text-white">Id</th>
@@ -48,13 +48,18 @@
         data() {
             return {
                 api: process.env.MIX_API_LOCAL,
-                faqs: []
+                faqs: [],
+                nb: []
             }
         },
         mounted () {
                axios.get(`${this.api}admim-faqs`)
                     .then(res => this.faqs = res.data)
                     .catch(err => console.log(err))
+
+                axios.get(`${this.api}admim-faq`)
+                .then(res => this.nb = res.data)
+                .catch(err => console.log(err))
 
         },
         methods : {

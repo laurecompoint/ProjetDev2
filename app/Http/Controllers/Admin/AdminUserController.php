@@ -13,6 +13,10 @@ class AdminUserController extends Controller
         return User::all();
 
     }
+    public function nb()
+    {
+        return User::all()->count();
+    }
 
     protected function create(Request $request)
     {

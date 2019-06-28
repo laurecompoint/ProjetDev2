@@ -29,7 +29,7 @@
           <b-col cols="3" md="3" align-self="start">
             <div class="produits-losange-home">
               <div class="text-promotion text-center">
-                <h4 class="color">-30%</h4>z
+                <h4 class="color">-30%</h4>
                 <H4>SUR TOUS <br> LES PRODUITS</H4>
                 Avec le code  <p class="color">Promo&Perso</p>
               </div>

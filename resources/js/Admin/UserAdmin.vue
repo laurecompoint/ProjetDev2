@@ -5,7 +5,7 @@
                 <NavAdmin></NavAdmin>
             </b-col>
             <b-col cols="9" md="9" class="text-center">
-                <h1 class="text-center mt-4">Administration : User    <router-link to="/users-new"><font-awesome-icon icon="plus-circle" style="font-size:40px; color: #3C618C; cursor: pointer" /></router-link></h1>
+                <h1 class="text-center mt-4">Administration : User  ({{ nb }})  <router-link to="/users-new"><font-awesome-icon icon="plus-circle" style="font-size:40px; color: #3C618C; cursor: pointer" /></router-link></h1>
 
                 <table>
                     <tr class="headtable">
@@ -44,12 +44,16 @@
         data() {
             return {
                 api: process.env.MIX_API_LOCAL,
-                users: []
+                users: [],
+                nb: []
             }
         },
         mounted () {
             axios.get(`${this.api}admin-user`)
                 .then(res => this.users = res.data)
+                .catch(err => console.log(err))
+            axios.get(`${this.api}admin-users`)
+                .then(res => this.nb = res.data)
                 .catch(err => console.log(err))
 
         },

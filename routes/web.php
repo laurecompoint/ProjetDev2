@@ -1,4 +1,5 @@
 <?php
+
 //redirection
 Route::group(['middleware' => ['auth']], function (){
 

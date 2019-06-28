@@ -12,7 +12,10 @@ class AdminProduitController extends Controller
         return Produit::all();
 
     }
-
+    public function nb()
+    {
+        return Produit::all()->count();
+    }
     public function create_admin(Request $request, Produit $produit)
     {
         $validate = $request->validate([
