@@ -42,7 +42,7 @@
                     <div class="bg-white livraison">
                         <b-row align-h="between" class="mt-4 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Sous total :   </h6></b-col>
-                            <b-col cols="6" md="5"><h5>{{soustotale()}} €</h5></b-col>
+                            <b-col cols="6" md="5"><h5>{{somme }} €</h5></b-col>
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
                             <b-col cols="6" md="6" class=""><h6>L'ivraison :</h6></b-col>
@@ -50,7 +50,7 @@
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Prix Total :</h6></b-col>
-                            <b-col cols="6" md="5"><h5 v-model="total">{{ addition()}}  €</h5></b-col>
+                            <b-col cols="6" md="5"><h5>{{somme + 5}}  €</h5></b-col>
                         </b-row>
                         <b-button class="mb-5 mt-2 ml-4 button-panier">Valider le panier</b-button>
                     </div>
@@ -68,8 +68,7 @@
         data() {
             return {
                 orders: [],
-                soustotal: 0,
-                livraison: 5
+                somme: [],
 
             }
         },
@@ -77,25 +76,14 @@
             axios.get('/panieruser')
                 .then(res => this.orders = res.data)
                 .catch(err => console.log(err))
+            axios.get('/paniersomme')
+                .then(res => this.somme = res.data)
+                .catch(err => console.log(err))
 
 
         },
 
         methods:{
-            paniervide(){
-
-            },
-            addition(){
-                if(this.soustotal > 0){
-                    return this.soustotal + this.livraison;
-                }
-            },
-            soustotale(){
-
-                    var price = this.orders[0].price
-                    return this.soustotal = price
-
-            },
             paniervide(){
 
             },

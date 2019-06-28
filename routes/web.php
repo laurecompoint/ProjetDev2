@@ -34,8 +34,9 @@ Route::group(['middleware' => ['auth']], function (){
     Route::post('/users-new', 'AppController@indexadmin')->where('any', '.*');
     Route::post('admin-user/{id}', 'AppController@indexadmin')->where('any', '.*');
     Route::get('/admin-order', 'AppController@indexadmin')->where('any', '.*');
-    //Route::post('/profile-modif', 'User\ProfileController@update');
+    Route::get('/paniersomme', 'Front\OrderController@paniersomme');
 });
+
 Route::get('profile', 'User\ProfileController@show')->middleware('auth')->name('profile.show');
 Route::post('profile', 'User\ProfileController@update')->middleware('auth')->name('profile.update');
 Route::get('/getUser', 'AppController@getUser');

@@ -41,7 +41,7 @@ class OrderController extends Controller
     public function paniersomme(Request $request,Order $order)
     {
 
-       $order = Order::all()->where('users_id', '==',  Auth::user()->id);
+            return $order = Order::all()->where('users_id', '==',  Auth::user()->id)->sum('price');
 
 
     }
