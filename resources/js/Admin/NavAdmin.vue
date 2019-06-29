@@ -2,16 +2,38 @@
     <div class="">
         <div class="admin-nav">
             <div class="text-promotion text-center">
-                <router-link to="/admin-user"><h6>Utilisateurs</h6></router-link>
-                <router-link to="/admin-produit"><h6>Produits</h6></router-link>
-                <router-link to="/admin-faqs"><h6>Faqs</h6></router-link>
+                <router-link to="/admin-user"><h6>Utilisateurs ({{ nbusers }})</h6></router-link>
+                <router-link to="/admin-produit"><h6>Produits  ({{ nbproduits }})</h6></router-link>
+                <router-link to="/admin-faqs"><h6>Faqs ({{ nbfaqs }})</h6> </router-link>
             </div>
         </div>
     </div>
 </template>
 <script>
     export default {
-        name: "NavAdmin"
+        name: "NavAdmin",
+        data() {
+            return {
+                api: process.env.MIX_API_LOCAL,
+                nbfaqs: [],
+                nbusers: [],
+                nbproduits: []
+            }
+        },
+        mounted () {
+
+            axios.get(`${this.api}admim-faq`)
+                .then(res => this.nbfaqs = res.data)
+                .catch(err => console.log(err))
+
+            axios.get(`${this.api}admin-users`)
+                .then(res => this.nbusers = res.data)
+                .catch(err => console.log(err))
+            axios.get(`${this.api}admin-produits`)
+                .then(res => this.nbproduits = res.data)
+                .catch(err => console.log(err))
+
+        },
 
     }
 </script>

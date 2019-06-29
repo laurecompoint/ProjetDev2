@@ -6,23 +6,23 @@
         <form  @submit.prevent="Onregister">
         <b-row align-h="center"  class="mt-5">
             <b-col cols="6">
-                <label  class="mt-3">Nom</label>
-                <small v-if="errors.lastname">
-                    <p class="text-danger" v-for="Error in errors.lastname">
-                        {{ Error }}
-                    </p>
-                </small>
-                <b-form-input type="text" placeholder="Nom"  v-model="auth.lastname"></b-form-input>
-
-            </b-col>
-            <b-col cols="6">
-                <label class="mt-3">Prénom</label>
+                <label  class="mt-3">Prénom</label>
                 <small v-if="errors.firstname">
                     <p class="text-danger" v-for="Error in errors.firstname">
                         {{ Error }}
                     </p>
                 </small>
-                <b-form-input type="text" placeholder="Prénom" v-model="auth.firstname"></b-form-input>
+                <b-form-input type="text" placeholder="Nom"  v-model="auth.firstname"></b-form-input>
+
+            </b-col>
+            <b-col cols="6">
+                <label class="mt-3">Nom</label>
+                <small v-if="errors.lastname">
+                    <p class="text-danger" v-for="Error in errors.lastname">
+                        {{ Error }}
+                    </p>
+                </small>
+                <b-form-input type="text" placeholder="Prénom" v-model="auth.lastname"></b-form-input>
 
             </b-col>
         </b-row>

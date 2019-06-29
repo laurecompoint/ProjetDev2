@@ -3,21 +3,21 @@
         <div class="compagny-picture text-center">
 
              <h2>Notre entreprise - CREATIVE PICTURE</h2>
-             <h2>Cree vos propre souvenire</h2>
+             <h2>Crée vos propres souvenirs</h2>
              <h2>Avec notre site</h2>
 
         </div>
-        <h3 class="title mt-5">Notre contacter</h3>
+        <h3 class="title mt-5">Nous contacter</h3>
         <b-container class="mt-5">
             <b-row align-h="between">
                 <b-col cols="12" md="7" class="responsive-margin">
-                    <p class="text-justify">Notre entreprise vous permet de transformez vos meilleurs souvenirs ou événement en cadeaux personnalisés.
-                        Vous pouvez personnalisé plusieur objet ou crée votre propre albums photo.
+                    <p class="text-justify">Notre entreprise vous permet de transformer vos meilleurs souvenirs ou événements en cadeaux personnalisés.
+                        Vous pouvez personnaliser plusieurs objets ou créer votre propre album photo.
                     </p>
                     <div class="icon-contact">
                     <b-row no-gutters align-v="center">
                         <font-awesome-icon class="icon-map" cols="1" icon="map-marker-alt" style="font-size:20px; color: #3C618C" />
-                         <p cols="5" class="mt-3 ml-2">Adresse : 30 avenues des fleurs, 75120, Paris</p>
+                         <p cols="5" class="mt-3 ml-2">Adresse : 30 avenue des fleurs, 75120, Paris</p>
                     </b-row>
                     <b-row no-gutters align-v="center">
                         <font-awesome-icon cols="1" icon="at" style="font-size:20px; color: #3C618C" />
@@ -53,10 +53,10 @@
         <b-container class="bv-example-row mt-5 pb-5">
             <b-row align-h="between">
                 <b-col cols="12" md="8" class="responsive-margin">
-                    <p class="text-justify">Retrouver nos objets personnalisé aisni que nos albums photo à personnalisé comme vous le souhaitez !!!
-                        Allez directement personnalisé votre future albums sur notre site, vous pourez choisir vos format de page, vos images, vos textes...
-                    </p><p>La création de votre albums sera facile et rapide d'utilisation.<br> La meme chose est aussi disponible pour nos objects personnalisés.
-                Nous proposont des mugs, des cadres photos...
+                    <p class="text-justify">Retrouvez nos objets personnalisés aisni que nos albums photo à personnaliser comme vous le souhaitez !!!
+                        Allez directement personnaliser votre futur album sur notre site, vous pourrez choisir vos formats de page, vos images, vos textes...
+                    </p><p>La création de votre album sera facile et rapide d'utilisation.<br> La même chose est aussi disponible pour nos objets personnalisés.
+                Nous proposons des mugs, des cadres photos...
                 </p>
                 </b-col>
                 <b-col cols="12" md="3">

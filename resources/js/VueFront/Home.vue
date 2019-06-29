@@ -46,7 +46,7 @@
     </slide>
 
   </carousel>
-    <router-link to="/objets-personnalisés"> <h3 class="title mt-5">Retrouver nos produits</h3></router-link>
+    <router-link to="/goodies"> <h3 class="title mt-5">Retrouver nos produits</h3></router-link>
     <div class="contain-white mt-5">
       <div class="products">
         <div class="flex-column background-image block text-center pt-5">
@@ -79,15 +79,15 @@
     <b-container class="bv-example-row mt-5 pb-5">
     <b-row align-h="between">
       <b-col cols="12" md="7" class="responsive-margin">
-        <p class="text-justify">Creative Picture vous permet de transformez vos meilleurs souvenirs ou événement en cadeaux personnalisés.
-         Vous pouvez personnalisé plusieur objet ou crée votre propre albums photo.
+        <p class="text-justify">Creative Picture vous permet de transformer vos meilleurs souvenirs ou événements en cadeaux personnalisés.
+         Vous pouvez personnaliser plusieurs objets ou créer votre propre album photo.
         </p>
         <p class="strong">Comment ça marche </p>
         <b-container>
         <b-row align-h="start">
           <b-col cols="3" class="text-center">
             <p><font-awesome-icon icon="paper-plane" style="font-size:40px; color: #3C618C" /></p>
-            <p>Faite votre choix</p>
+            <p>Faites votre choix</p>
           </b-col>
           <b-col cols="3"  class="text-center">
             <p><font-awesome-icon icon="images" style="font-size:40px; color: #3C618C" /></p>

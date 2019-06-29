@@ -204,7 +204,6 @@ link,
 
   .responsive-margin {
     margin-left: 40px;
-    width: 500px;
   }
 
   .arrow-down {
@@ -222,7 +221,6 @@ link,
 @media (max-width: 425px) {
   .responsive-margin {
     margin-left: 0px;
-    width: 500px;
   }
 
   .products {

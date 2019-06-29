@@ -169,7 +169,6 @@ a, i, link, .iconsociaux{
   }
   .responsive-margin{
     margin-left: 40px;
-    width: 500px;
   }
   .arrow-down{
     position: absolute;
@@ -185,7 +184,6 @@ a, i, link, .iconsociaux{
 @media (max-width: $responsive-mobile) {
   .responsive-margin{
     margin-left: 0px;
-    width: 500px;
   }
   .products{
     flex-direction: column;

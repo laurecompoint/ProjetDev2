@@ -16,6 +16,8 @@ class ProfileController extends Controller
         return view('AdminModif.profile', ['user' => Auth::user()] );
     }
     public function update(Request $request){
+
+
         $user = Auth::user();
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
@@ -29,7 +31,6 @@ class ProfileController extends Controller
         $user->email = $request->email;
         $user->tel = $request->tel;
         $user->adresse = $request->adresse;
-        $user->password = Hash::make($request['password']);
         $user->save();
         return redirect('/');
     }

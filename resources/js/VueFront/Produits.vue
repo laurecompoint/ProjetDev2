@@ -20,9 +20,7 @@
                     </b-row>
                     <h6 >Deux moyen de livraison : </h6>
                     <strong > - Livraison Rapide </strong>
-                    <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <strong > - Livraison Gratuite</strong>
-                    <p class=" mt-2 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    <p class="mt-2 pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                 </b-col>
                 <b-col cols="12" md="4" class="" align-v="center">
 

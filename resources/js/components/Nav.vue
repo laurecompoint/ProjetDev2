@@ -12,7 +12,7 @@
                     <ul class="navbar-nav">
 
 
-                        <div class="mt-3" v-if="!OnUser()" >
+                        <div class="mt-3 nav-mobil-tablet" v-if="!OnUser()" >
                             <router-link to="/register" >Inscription</router-link>
                             <router-link  to="/login">Connexion</router-link>
                             <router-link  to="/goodies">Goodies</router-link>
@@ -116,6 +116,10 @@
             }
         }
         @media screen and (min-width: $responsive-mobile) and (max-width: $responsive-tablet) {
+            .nav-mobil-tablet{
+                display: flex;
+                flex-direction: column;
+            }
             .burger > div{
                 width: 36px;
                 height: 6px;
