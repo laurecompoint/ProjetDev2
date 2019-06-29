@@ -83,12 +83,7 @@
 <style scoped lang="scss">
     $responsive-tablet: 768px;
     $responsive-mobile: 425px;
-    .compagny-picture{
-        background-image: url("../../../public/img/entreprise.png");
-        background-size: 1450px;
-        height: 560px;
-        padding-top: 190px;
-    }
+
     h2{
         color: white;
     }

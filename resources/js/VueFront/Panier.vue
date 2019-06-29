@@ -162,6 +162,9 @@
             top: 220px;
             left: 220px;
         }
+        .livraison{
+            height: 250px;
+        }
 
     }
 </style>

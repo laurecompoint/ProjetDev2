@@ -19,10 +19,10 @@
             <font-awesome-icon v-b-toggle.collapse-1 icon="angle-down" class="icon mt-5 ml-3" style="font-size:40px; color: #3C618C" />
         </b-row>
 
-        <b-collapse id="collapse-1" cols="8" class="" align-self="center">
+        <b-collapse id="collapse-1" cols="8" class="" align-self="center" v-for="order in orders" v-bind:key="order.id">
             <b-row  class="row text-center">
-                <p cols="6" class="history"><strong >Nom : </strong></p>
-                <p cols="6" class="ml-5"><strong>Status : </strong></p>
+                <p cols="6" class="history"><strong >Nom : </strong> {{order.name}}</p>
+                <p cols="6" class="ml-5"><strong>Status : </strong> En cours</p>
             </b-row>
         </b-collapse>
 
@@ -55,8 +55,13 @@
         },
         data() {
             return {
-
+                orders: [],
             }
+        },
+        mounted () {
+            axios.get('/panieruser')
+                .then(res => this.orders = res.data)
+                .catch(err => console.log(err))
         },
 
         methods : {

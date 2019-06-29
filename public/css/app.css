@@ -23,6 +23,13 @@ input {
   background-size: 410px;
 }
 
+.compagny-picture {
+  background-image: url(/images/entreprise.jpg?0b13d92517cb1bc8739c96124e805402);
+  background-size: 1450px;
+  height: 560px;
+  padding-top: 190px;
+}
+
 .arrow-down {
   position: absolute;
   top: 1705px;

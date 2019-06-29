@@ -175,5 +175,21 @@
             }
 
         }
+        @keyframes nav {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        @keyframes burger {
+            from{
+                background: #000;
+            }
+            to{
+                background: #000;
+            }
+        }
     }
 </style>
