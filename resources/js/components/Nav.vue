@@ -10,22 +10,28 @@
                 </div>
                 <nav class="nav">
                     <ul class="navbar-nav">
-                <router-link  to="/goodies">Goodies</router-link>
-                <div class="" v-if="OnUser()">
-                    <b-dropdown size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
-                        <template slot="button-content"><font-awesome-icon icon="user" style="font-size:30px; color: white" /></template>
-                        <router-link class="text-dark"  to="/compte"><h6 class="text-center">Mon Espace : {{user().firstname}}</h6> </router-link>
-                        <img v-bind:src="user().avatar" class="w-25 ml-5" />
-                        <div class="text-center">
-                            <a class="buttonlogout"  @click="Onlogout()">Deconexion</a>
-                        </div>
-                    </b-dropdown>
-                </div>
-                        <div class="mt-3" v-else>
-                            <router-link  to="/login">Connexion</router-link>
+
+
+                        <div class="mt-3" v-if="!OnUser()" >
                             <router-link to="/register" >Inscription</router-link>
+                            <router-link  to="/login">Connexion</router-link>
+                            <router-link  to="/goodies">Goodies</router-link>
+                            <a href="panier">Panier <font-awesome-icon icon="shopping-basket"  style="font-size:20px; color: WHITE;" /></a>
                         </div>
-                <router-link to="/panier">Panier <font-awesome-icon icon="shopping-basket"  style="font-size:20px; color: WHITE;" /></router-link>
+                        <div class="mt-3" v-else>
+                            <router-link  to="/goodies">Goodies</router-link>
+                            <router-link  to="/panier">Panier <font-awesome-icon icon="shopping-basket"  style="font-size:20px; color: WHITE;" /></router-link>
+                            <b-dropdown id="dropdown-right" right size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
+                                <template slot="button-content"><font-awesome-icon icon="user" style="font-size:30px; color: white" /></template>
+                                <router-link class="text-dark"  to="/compte"><h6 class="text-center">Mon Espace : {{user().firstname}}</h6> </router-link>
+                                <img v-bind:src="user().avatar" class="w-25 ml-5" />
+                                <div class="text-center">
+                                    <a class="buttonlogout"  @click="Onlogout()">Deconexion</a>
+                                </div>
+                            </b-dropdown>
+
+                        </div>
+
                     </ul>
                 </nav>
             </b-navbar-nav>

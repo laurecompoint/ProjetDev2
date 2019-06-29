@@ -14,6 +14,8 @@ Route::group(['middleware' => ['auth']], function (){
     Route::post('/creation-cadrephoto', 'Front\OrderController@create');
     Route::post('/creation-usb', 'Front\OrderController@create');
     Route::post('/order-delete/{id}', 'Front\OrderController@destroy');
+    Route::get('profile', 'User\ProfileController@show')->name('profile.show');
+    Route::post('profile', 'User\ProfileController@update')->name('profile.update');
 
     //Admin route
     Route::get('/faqmodif{id}', 'Admin\AdminFaqController@edit')->name('faqmodif{id}');
@@ -37,8 +39,7 @@ Route::group(['middleware' => ['auth']], function (){
     Route::get('/paniersomme', 'Front\OrderController@paniersomme');
 });
 
-Route::get('profile', 'User\ProfileController@show')->middleware('auth')->name('profile.show');
-Route::post('profile', 'User\ProfileController@update')->middleware('auth')->name('profile.update');
+
 Route::get('/getUser', 'AppController@getUser');
 
 //route app

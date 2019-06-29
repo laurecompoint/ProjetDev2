@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Image;
 class OrderController extends Controller
 {
 
@@ -21,6 +21,7 @@ class OrderController extends Controller
             'text' => 'required',
 
         ]);
+
         $order = new Order;
         $order->name = $request->name;
         $order->price =  $request->price;
@@ -28,7 +29,7 @@ class OrderController extends Controller
         $order->users_id =  Auth::user()->id;
         $order->image =  $request->image;
         $order->nombrephoto =  $request->nombrephoto;
-        $order ->save();
+        $order->save();
 
     }
     public function panieruser()
