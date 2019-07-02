@@ -39,7 +39,7 @@
                     <div class="bg-white livraison">
                         <b-row align-h="between" class="mt-4 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Sous total :   </h6></b-col>
-                            <b-col cols="6" md="5"><h5>{{somme }} €</h5></b-col>
+                            <b-col cols="6" md="5"><h5> {{somme}}€</h5></b-col>
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Livraison :</h6></b-col>
@@ -47,7 +47,8 @@
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Prix Total :</h6></b-col>
-                            <b-col cols="6" md="5"><h5>{{somme + 5}}  €</h5></b-col>
+                            <b-col cols="6" md="5"><h5>{{total }}€</h5></b-col>
+                            <p class="bg-white" style="position: fixed; top: 416px; left: 1225px; width: 23px; height: 20px;"></p>
                         </b-row>
                         <b-button @click="checkout" class="mb-5 mt-2 ml-4 button-panier">Valider le panier</b-button>
                     </div>
@@ -83,37 +84,48 @@
         data() {
             return {
                 orders: [],
-                somme: [],
+                somme: '',
                 empty: '',
-                image: 'https://firebasestorage.googleapis.com/v0/b/carte-d8ee8.appspot.com/o/logocp.png?alt=media&token=52aebb29-ccae-4aa6-88c9-291f7f0a5fa4',
+                image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
                 name: 'Paiement Creative Picture',
                 description: 'Entree vos information de paiement',
                 currency: 'currency',
                 stripeToken: 'nothing',
-                address: 'address',
-                amount: 30000,
+                address: 'adresse',
+                amount:  0,
 
             }
         },
+
         mounted () {
             axios.get('/panieruser')
                 .then((res) => {
+                    this.orders = res.data
+                    if(res.data.length == '' ){
+                        this.empty = `Votre panier est vide`
+                        console.log('empty')
+                    }
+                    else{
+                        this.empty =  `Panier`
 
-                        if(res.data.length == '' ){
-                            this.empty = `Votre panier est vide`
-                            console.log('empty')
-                        }
-                        else{
-                            this.empty =  `Panier`
-                            this.orders = res.data
-                            console.log('Notempty')
-                        }
+                        console.log('Notempty')
+                    }
+
                 })
                 .catch(err => console.log(err))
 
-            axios.get('/paniersomme')
+            axios.get(`/paniersomme`)
                 .then(res => this.somme = res.data)
                 .catch(err => console.log(err))
+
+        },
+        computed:{
+
+            total(){
+                let $total = this.somme + 5;
+                this.amount = $total * 100
+                return this.amount
+            },
 
         },
 
