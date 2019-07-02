@@ -1,6 +1,6 @@
 <template>
     <div class="">
-    <h1 class="text-center mt-4">Personnalise votre clé Usb</h1>
+    <h1 class="text-center mt-4">Personnaliser votre clé Usb</h1>
     <div class="line mt-4"></div>
         <form @submit.prevent="Onorder">
         <b-row class="creation">
@@ -51,7 +51,7 @@
                 orders:{
                     name: "Usb",
                     price: "15",
-                    text: 'Votre text sera ici',
+                    text: 'Votre texte sera ici',
                     nombrephoto: '0',
                 },
             };

@@ -4,30 +4,30 @@
         <div class="line mt-4"></div>
         <b-row align-h="between" class="mt-3 pb-5" >
             <div class="info" cols="5">
-                <h3 class="mt-5">Information</h3>
+                <h3 class="mt-5">Informations</h3>
                 <p class="mt-5"><strong>Nom : </strong> {{user().lastname}} </p>
                 <p><strong>Prénom : </strong> {{user().firstname}} </p>
                 <p><strong>Adresse :  </strong>{{user().adresse}} </p>
                 <p><strong>Mail : </strong> {{user().email}}</p>
                 <p><strong>Numéro de téléphone : </strong>{{user().tel}} </p>
-                <a href="profile"  class="btn button-compte">Modifier vos info</a>
+                <a href="profile"  class="btn button-compte">Modifier vos infos</a>
             </div>
             <b-col cols="4" class="user"> <p CLASS="text-center mt-5"><font-awesome-icon icon="user" style="font-size:200px; color: #3C618C" /></p></b-col>
         </b-row>
         <b-row align-v="start" class="pb-3 mt-5">
-            <h3 v-b-toggle.collapse-1 class="mt-5 info">Historique de commande</h3>
+            <h3 v-b-toggle.collapse-1 class="mt-5 info">Historique de commandes</h3>
             <font-awesome-icon v-b-toggle.collapse-1 icon="angle-down" class="icon mt-5 ml-3" style="font-size:40px; color: #3C618C" />
         </b-row>
 
         <b-collapse id="collapse-1" cols="8" class="" align-self="center" v-for="order in orders" v-bind:key="order.id">
             <b-row  class="row text-center">
                 <p cols="6" class="history"><strong >Nom : </strong> {{order.name}}</p>
-                <p cols="6" class="ml-5"><strong>Status : </strong> En cours</p>
+                <p cols="6" class="ml-5"><strong>Statut : </strong> En cours</p>
             </b-row>
         </b-collapse>
 
         <b-row align-v="start" class="">
-            <h3 v-b-toggle.collapse-2 class="mt-5 info">Avantage cadeaux</h3>
+            <h3 v-b-toggle.collapse-2 class="mt-5 info">Avantages cadeaux</h3>
             <font-awesome-icon v-b-toggle.accordion-3 icon="angle-down" class="icon mt-5 ml-3" style="font-size:40px; color: #3C618C" />
         </b-row>
         <b-collapse id="accordion-3" cols="8" class="contact mt-3" align-self="center">

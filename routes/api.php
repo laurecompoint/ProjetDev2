@@ -15,3 +15,4 @@ Route::middleware('api')->post('/users-new', 'Admin\AdminUserController@create')
 Route::middleware('api')->get('/admim-faq', 'Admin\AdminFaqController@nb');
 Route::middleware('api')->get('/admin-users', 'Admin\AdminUserController@nb');
 Route::middleware('api')->get('/admin-produits', 'Admin\AdminProduitController@nb');
+

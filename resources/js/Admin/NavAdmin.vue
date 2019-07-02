@@ -4,7 +4,7 @@
             <div class="text-promotion text-center">
                 <router-link to="/admin-user"><h6>Utilisateurs ({{ nbusers }})</h6></router-link>
                 <router-link to="/admin-produit"><h6>Produits  ({{ nbproduits }})</h6></router-link>
-                <router-link to="/admin-faqs"><h6>Faqs ({{ nbfaqs }})</h6> </router-link>
+                <router-link to="/admin-faqs"><h6>Faq ({{ nbfaqs }})</h6> </router-link>
             </div>
         </div>
     </div>

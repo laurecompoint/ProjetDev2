@@ -1,18 +1,15 @@
 <template>
     <div  class="background">
-        <h1 class="text-center mt-4">Panier</h1>
+        <b-row align-h="center">
+            <h1 class="text-center mt-4"> {{empty}}</h1>
+            <p class="mt-4 pl-3 text-center"><font-awesome-icon icon="shopping-basket"  style="font-size:40px; color: #6C8EAD;" /></p>
+        </b-row>
         <div class="line mt-4"></div>
-        <div class="" v-if="paniervide()">
-            <h3 class="mt-5 text-center">Votre panier est vide</h3>
-            <p class="pb-5 mt-5 text-center"><font-awesome-icon icon="shopping-basket"  style="font-size:200px; color: #6C8EAD;" /></p>
-        </div>
         <b-container class="bv-example-row">
             <b-row align-h="between">
                 <b-col cols="10" md="6" class="panier">
                     <h3 class="mt-5">Vos produits :</h3>
-
-                    <div class="produit-list pb-5" v-for="order in orders" v-bind:key="order.id">
-
+                    <div class="produit-list pb-5" id="produit-vide" v-for="order in orders" v-bind:key="order.id">
                         <b-row align-h="between">
                             <b-col cols="10" md="6" class="">
                                 <b-row no-gutters class="mt-5" align-v="center">
@@ -38,26 +35,44 @@
                     </div>
                 </b-col>
                 <b-col cols="6" md="4" class="recap">
-                    <h3 class="mt-5">Recap paiment</h3>
+                    <h3 class="mt-5">Récap paiement</h3>
                     <div class="bg-white livraison">
                         <b-row align-h="between" class="mt-4 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Sous total :   </h6></b-col>
                             <b-col cols="6" md="5"><h5>{{somme }} €</h5></b-col>
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
-                            <b-col cols="6" md="6" class=""><h6>L'ivraison :</h6></b-col>
+                            <b-col cols="6" md="6" class=""><h6>Livraison :</h6></b-col>
                             <b-col cols="6" md="5"><h5>5 €</h5></b-col>
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Prix Total :</h6></b-col>
                             <b-col cols="6" md="5"><h5>{{somme + 5}}  €</h5></b-col>
                         </b-row>
-                        <b-button class="mb-5 mt-2 ml-4 button-panier">Valider le panier</b-button>
+                        <b-button @click="checkout" class="mb-5 mt-2 ml-4 button-panier">Valider le panier</b-button>
                     </div>
                 </b-col>
             </b-row>
         </b-container>
 
+        <div class="stripe-paiment">
+            <div>
+                <vue-stripe-checkout
+                        ref="checkoutRef"
+                        locale="fr"
+                        :image="image"
+                        :shipping-address="address"
+                        :name="name"
+                        :description="description"
+                        :currency="currency"
+                        :amount="amount"
+                        :allow-remember-me="false"
+                        @done="done"
+                ></vue-stripe-checkout>
+
+            </div>
+
+        </div>
 
     </div>
 </template>
@@ -69,21 +84,72 @@
             return {
                 orders: [],
                 somme: [],
+                empty: '',
+                image: 'https://firebasestorage.googleapis.com/v0/b/carte-d8ee8.appspot.com/o/logocp.png?alt=media&token=52aebb29-ccae-4aa6-88c9-291f7f0a5fa4',
+                name: 'Paiement Creative Picture',
+                description: 'Entree vos information de paiement',
+                currency: 'currency',
+                stripeToken: 'nothing',
+                address: 'address',
+                amount: 30000,
 
             }
         },
         mounted () {
             axios.get('/panieruser')
-                .then(res => this.orders = res.data)
+                .then((res) => {
+
+                        if(res.data.length == '' ){
+                            this.empty = `Votre panier est vide`
+                            console.log('empty')
+                        }
+                        else{
+                            this.empty =  `Panier`
+                            this.orders = res.data
+                            console.log('Notempty')
+                        }
+                })
                 .catch(err => console.log(err))
+
             axios.get('/paniersomme')
                 .then(res => this.somme = res.data)
                 .catch(err => console.log(err))
 
-
         },
 
         methods:{
+            async checkout () {
+                if(this.amount !== null){
+                    const { token, args } = await this.$refs.checkoutRef.open();
+                    callStripe(this.stripeToken, this.amount);
+                    function callStripe(token, montant) {
+                        const request = require('request');
+                        let data = 'amount='+ montant+ '&currency=eur&description=Paiment&source='+token;
+                        //secret key (stripe)
+                        let headers = {
+                            'Authorization': 'Bearer sk_test_PJRgUiiJktt9fkx66Q5inqtM'
+                        };
+                        let options = {
+                            url: 'https://api.stripe.com/v1/charges',
+                            headers: headers,
+                            method: 'POST',
+                            body: data
+                        };
+                        function callback(error) {
+                            if (!error ) {
+                                alert("Votre paiement a été pris en compte")
+                            }
+                            else{
+                                alert("ERROR : le paiement n'as pas été valider")
+                            }
+                        }
+                        request(options, callback);
+                    }
+                }
+            },
+            done(token) {
+                this.stripeToken = token.token.id;
+            },
             paniervide(){
 
             },
@@ -91,7 +157,7 @@
                     axios.post(`/order-delete/${id}`)
                         .then(res => {
                             window.location = '/panier'
-
+                            //this.$router.push('/panier')
                         })
                         .catch(err => {
                             this.errors = err.response.data.errors

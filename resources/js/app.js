@@ -21,6 +21,9 @@ Vue.use(BootstrapVue)
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
 
+//stripe
+import VueStripeCheckout from 'vue-stripe-checkout';
+Vue.use(VueStripeCheckout, 'pk_test_UsC2qjBr6F3TWoWSrlkkexgS');
 
 //font awesome : icon
 library.add( faTimes, faTextHeight, faCamera, faQuestion, faPencilAlt, faTrash, faPlusCircle, faPaperPlane, faImages, faCartArrowDown, faTruck, faLongArrowAltDown, faFacebook, faTwitter, faInstagram, faFacebookMessenger, faMapMarkerAlt, faAt,  faTty, faUser, faAngleDown, faShoppingBasket)

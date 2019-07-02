@@ -1,11 +1,11 @@
 <template>
     <div class="background text-justify">
-        <h1 class="text-center pt-4">Modifier vos info</h1>
+        <h1 class="text-center pt-4">Modifier vos informations</h1>
         <div class="line mt-4"></div>
         <b-row align-h="between" class="mt-3 pb-5">
             <div class="info" cols="6">
                 <form method="post" action="" @submit.prevent="profil">
-                    <h3 class="mt-5">Information</h3> <br>
+                    <h3 class="mt-5">Informations</h3> <br>
 
 
                 </form>

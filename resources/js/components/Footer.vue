@@ -12,7 +12,7 @@
           <b-link to="/faq-contact" class="link">Nous contacter</b-link>
         </b-col>
         <b-col sm="5" offset-sm="2" md="3" offset-md="0" class="footerlink" id="us">
-          <p class="text-footer">Qui somme nous ?</p>
+          <p class="text-footer">Qui sommes nous ?</p>
           <b-link to="/entreprise" class="link">Entreprise</b-link> <br>
           <b-link  to="/mention-legal" class="link">Mention Légale</b-link>
         </b-col>

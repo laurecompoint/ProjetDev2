@@ -32,8 +32,13 @@
         "@fortawesome/vue-fontawesome": "^0.1.6",
         "bootstrap-vue": "^2.0.0-rc.18",
         "es6-promise": "^4.2.8",
+        "fs": "0.0.1-security",
+        "net": "^1.0.2",
+        "request": "^2.88.0",
+        "tls": "0.0.1",
         "vue-carousel": "^0.18.0",
         "vue-scroll-stop": "^0.1.5",
+        "vue-stripe-checkout": "^1.2.6",
         "vue-stripe-elements-plus": "^0.2.10",
         "vuex": "^3.1.1"
     }

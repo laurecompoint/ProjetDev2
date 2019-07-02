@@ -3,12 +3,12 @@
         <div class="mt-5">
             <b-row  class="mt-3 test" align-h="around">
                 <b-col cols="12" md="7" class="livraison title">
-                    <h5 class="mt-2">Plus d'information sur {{ produit.name }} </h5>
+                    <h5 class="mt-2">Plus d'informations sur {{ produit.name }} </h5>
                     <p class="mt-4"><strong> - Description : </strong> {{ produit.description }} </p>
                     <p><strong> - Personnalisation : </strong> Possibilité d'ajouter des photos et du texte </p>
                     <p><strong> -  Délai de fabrication : </strong> {{ produit.fabrication }} </p>
-                    <p><strong> - Prix : </strong> {{ produit.price }}€ hors d'axe </p>
-                    <p class="text-justify w-75"><strong> - Autre détail : </strong> {{ produit.content }}</p>
+                    <p><strong> - Prix : </strong> {{ produit.price }}€ hors taxe </p>
+                    <p class="text-justify w-75"><strong> - Autres détails : </strong> {{ produit.content }}</p>
                     <h5 class="mt-5">A propos de la livraison</h5>
                     <b-row  class="p-0 m-0 mt-3">
                         <b-col cols="3"  md="1" class="p-0 m-0">
@@ -18,7 +18,7 @@
                         <p class="mt-3 text-livraison" md="7">Nous prenons tout le temps nécessaire pour imprimer avec soin  puis protéger vos créations avant leur livraison.</p>
                         </b-col>
                     </b-row>
-                    <h6 >Deux moyen de livraison : </h6>
+                    <h6 >Moyen de livraison : </h6>
                     <strong > - Livraison Rapide </strong>
                     <p class="mt-2 pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                 </b-col>

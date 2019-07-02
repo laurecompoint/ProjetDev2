@@ -27,7 +27,7 @@
                         </p>
                     </small>
                     <b-form-input type="text" v-model="produits.price" placeholder="prix"></b-form-input>
-                    <label  class="mt-3 email">Contenue</label>
+                    <label  class="mt-3 email">Contenu</label>
                     <small v-if="errors.content">
                         <p class="text-danger" v-for="Error in errors.content">
                             {{ Error }}

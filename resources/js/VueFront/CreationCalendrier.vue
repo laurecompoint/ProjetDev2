@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <h1 class="text-center mt-4">Personnalise votre calendrier</h1>
+        <h1 class="text-center mt-4">Personnaliser votre calendrier</h1>
         <div class="line mt-4"></div>
         <div class="error">
             <b-row class="pt-5" align-h="center" >

@@ -1,6 +1,6 @@
 <template>
     <div class="">
-    <h1 class="text-center mt-4">Personnalise votre mugs</h1>
+    <h1 class="text-center mt-4">Personnaliser votre mug</h1>
     <div class="line mt-4"></div>
         <form @submit.prevent="Onorder">
         <b-row class="creation">
@@ -56,7 +56,7 @@
                     image: "",
                     name: "Mugs",
                     price: 15,
-                    text: 'Votre text sera ici',
+                    text: 'Votre texte sera ici',
                     nombrephoto: '1',
                 },
             };

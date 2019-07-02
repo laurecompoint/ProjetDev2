@@ -18,15 +18,15 @@
                             <router-link  to="/goodies">Goodies</router-link>
                             <a href="panier">Panier <font-awesome-icon icon="shopping-basket"  style="font-size:20px; color: WHITE;" /></a>
                         </div>
-                        <div class="mt-3" v-else>
+                        <div class="mt-3 nav-mobil-tablet" v-else>
                             <router-link  to="/goodies">Goodies</router-link>
                             <router-link  to="/panier">Panier <font-awesome-icon icon="shopping-basket"  style="font-size:20px; color: WHITE;" /></router-link>
                             <b-dropdown id="dropdown-right" right size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
                                 <template slot="button-content"><font-awesome-icon icon="user" style="font-size:30px; color: white" /></template>
                                 <router-link class="text-dark"  to="/compte"><h6 class="text-center">Mon Espace : {{user().firstname}}</h6> </router-link>
-                                <img v-bind:src="user().avatar" class="w-25 ml-5" />
+                                <img v-bind:src="user().avatar" class="w-25 ml-5 border-user" />
                                 <div class="text-center">
-                                    <a class="buttonlogout"  @click="Onlogout()">Deconexion</a>
+                                    <a class="buttonlogout"  @click="Onlogout()">Déconnexion</a>
                                 </div>
                             </b-dropdown>
 
@@ -84,6 +84,10 @@
     $responsive-mobile: 425px;
     $blue : #6C8EAD;
     $white: white;
+    .border-user{
+        border-radius: 49px;
+        border: solid 2px #6C8EAD;
+    }
     #app{
         font-family: 'Gravity';
         /*
@@ -114,6 +118,7 @@
                 color:  $blue;
                 cursor: pointer;
             }
+
         }
         @media screen and (min-width: $responsive-mobile) and (max-width: $responsive-tablet) {
             .nav-mobil-tablet{

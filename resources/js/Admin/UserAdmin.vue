@@ -11,7 +11,7 @@
                     <tr class="headtable">
                         <th class="text-white">Id</th>
                         <th class="text-white">Prénom</th>
-                        <th class="text-white">Action</th>
+                        <th class="text-white">Actions</th>
                     </tr>
                     <tr v-for="user in users" v-bind:key="user.id" class="mt-5 bg-white">
                         <td class="mt-5 ">{{ user.id }}</td>

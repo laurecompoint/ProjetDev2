@@ -10,7 +10,7 @@
                     <tr class="headtable">
                         <th class="text-white">Id</th>
                         <th class="text-white">Nom du produit</th>
-                        <th class="text-white">Action</th>
+                        <th class="text-white">Actions</th>
                     </tr>
                     <tr v-for="produit in produits" v-bind:key="produit.id" class="mt-5 bg-white">
                         <td class="mt-5">{{ produit.id }}</td>

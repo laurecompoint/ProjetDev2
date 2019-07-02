@@ -9,6 +9,7 @@ Route::group(['middleware' => ['auth']], function (){
     Route::get('/creation-cadrephoto', 'AppController@index')->where('any', '.*');
     Route::get('/compte', 'AppController@index')->where('any', '.*');
     Route::get('/panier', 'AppController@index')->where('any', '.*');
+    Route::get('/paiement', 'AppController@index')->where('any', '.*');
     Route::get('/panieruser', 'Front\OrderController@panieruser');
     Route::post('/creation-mugs', 'Front\OrderController@create');
     Route::post('/creation-cadrephoto', 'Front\OrderController@create');

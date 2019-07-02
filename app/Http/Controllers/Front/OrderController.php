@@ -39,6 +39,7 @@ class OrderController extends Controller
 
 
     }
+
     public function paniersomme(Request $request,Order $order)
     {
 

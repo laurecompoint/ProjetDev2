@@ -11,7 +11,7 @@
                     <tr class="headtable">
                         <th class="text-white">Id</th>
                         <th class="text-white">Catégorie</th>
-                        <th class="text-white">Action</th>
+                        <th class="text-white">Actions</th>
                     </tr>
                     <tr v-for="faq in faqs" v-bind:key="faq.id" class="mt-5 bg-white">
                         <td class="mt-5">{{ faq.id }}</td>
