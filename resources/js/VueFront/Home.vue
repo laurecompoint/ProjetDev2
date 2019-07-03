@@ -87,7 +87,7 @@
         <b-row align-h="start">
           <b-col cols="3" class="text-center">
             <p><font-awesome-icon icon="paper-plane" style="font-size:40px; color: #3C618C" /></p>
-            <p>Faites votre choix</p>
+            <p>Faire votre choix</p>
           </b-col>
           <b-col cols="3"  class="text-center">
             <p><font-awesome-icon icon="images" style="font-size:40px; color: #3C618C" /></p>
@@ -95,7 +95,7 @@
           </b-col>
           <b-col cols="3" class="text-center">
             <p><font-awesome-icon icon="cart-arrow-down" style="font-size:40px; color: #3C618C" /></p>
-            <p>Paiment</p>
+            <p>Paiement</p>
           </b-col>
           <b-col cols="3" class="text-center">
             <p><font-awesome-icon icon="truck" style="font-size:40px; color: #3C618C" /></p>

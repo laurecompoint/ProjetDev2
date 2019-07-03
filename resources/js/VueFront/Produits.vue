@@ -64,8 +64,8 @@
             if ( this.url === this.album) { var id = 1 }
             if ( this.url === this.calendrier) { var id = 7}
             if ( this.url === this.mugs) { var id = 3 }
-            if ( this.url === this.cadrephoto) { var id = 5 }
-            if ( this.url === this.usb) { var id = 6 }
+            if ( this.url === this.cadrephoto) { var id = 6 }
+            if ( this.url === this.usb) { var id = 7 }
 
             axios.get(`${this.api}goodies/${id}`)
                 .then(res => this.produit = res.data)

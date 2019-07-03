@@ -3,10 +3,10 @@
         <h1 class="text-center mt-4">Pour plus d'information</h1>
         <div class="line mt-4"></div>
 
-        <h3 class="contact mt-5">FAQ</h3>
+            <h3 class="contact mt-5">FAQ</h3>
 
             <div class="" v-for="faq in faqs" v-bind:key="faq.id">
-            <div class="contact text-justify" cols="5">
+            <div class="contact text-justify" >
                 <h6 class="mt-5">Catégorie : {{ faq.name }}</h6>
                 <p class="mt-4 w-75"><strong>Question : </strong>  {{ faq.question }}</p>
                 <p CLASS="w-50"><strong>Réponse : </strong>  {{ faq.answer }}</p>
