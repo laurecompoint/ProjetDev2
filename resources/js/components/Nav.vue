@@ -11,8 +11,8 @@
                 <nav class="nav">
                     <ul class="navbar-nav">
                         <div class="mt-3 nav-mobil-tablet" v-if="!OnUser()" >
-                            <router-link to="/inscription" >Inscription</router-link>
-                            <router-link  to="/connexion">Connexion</router-link>
+                            <router-link to="/register" >Inscription</router-link>
+                            <router-link  to="/login">Connexion</router-link>
                             <router-link  to="/goodies">Goodies</router-link>
                             <a href="panier">Panier <font-awesome-icon icon="shopping-basket"  style="font-size:20px; color: WHITE;" /></a>
                         </div>

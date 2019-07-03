@@ -47,8 +47,8 @@
                         </b-row>
                         <b-row align-h="between" class="mt-2 ml-2">
                             <b-col cols="6" md="6" class=""><h6>Prix Total :</h6></b-col>
-                            <b-col cols="6" md="5"><h5>{{total }}€</h5></b-col>
-                            <p class="bg-white" style="position: fixed; top: 416px; left: 1225px; width: 23px; height: 20px;"></p>
+                            <b-col cols="6" md="5"><h5>{{somme + 5 }}€</h5></b-col>
+                            <h5 style="display:none">{{total }}€</h5>
                         </b-row>
                         <b-button @click="checkout" class="mb-5 mt-2 ml-4 button-panier">Valider le panier</b-button>
                     </div>

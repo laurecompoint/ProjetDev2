@@ -95,13 +95,13 @@ const router = new VueRouter({
             component: FaqContact
         },
         {
-            path: '/connexion',
+            path: '/login',
             name: 'login',
             component: Login,
 
         },
         {
-            path: '/inscription',
+            path: '/register',
             name: 'register',
             component: Register,
 
